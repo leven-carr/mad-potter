@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Figtree Variable";
+  src:
+    url("./assets/fonts/figtree-variable.woff2")
+      format("woff2-supports-variations"),
+    url("./assets/fonts/figtree-variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Capriola Variable";
+  src:
+    url("./assets/fonts/capriola-variable.woff2")
+      format("woff2-supports-variations"),
+    url("./assets/fonts/capriola-variable.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Figtree Variable", sans-serif;
+  --font-display: "Capriola Variable", sans-serif;
+}
