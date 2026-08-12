@@ -23,6 +23,36 @@
 }
 
 @theme {
+  /* Fonts */
   --font-sans: "Figtree Variable", sans-serif;
   --font-display: "Capriola Variable", sans-serif;
+
+  /* Colors - Primitives */
+  --color-purple-300: #b796d0;
+  --color-purple-500: #8153a3;
+  --color-purple-700: #4d0076;
+  
+  --color-lavender-100: #f0dcfe;
+
+  --color-raspberry-200: #f8a7a3;
+  --color-raspberry-300: #f16d7f;
+  --color-raspberry-400: #e30b5d;
+
+  --color-clay-tan-100: #f8dec8;
+  --color-clay-tan-150: #ecbdae;
+  --color-clay-tan-200: #e7b1a3;
+
+  --color-alabaster-white-50: #fcf8f9;
+
+  --color-velvet-black-600: #433344;
+  --color-velvet-black-700: #2b2127;
+
+  /* Colors - Semantic */
+  --color-brand-primary: var(--color-purple-700);
+  --color-brand-secondary: var(--color-lavender-100);
+  --color-brand-accent: var(--color-raspberry-400);
+
+  --color-canvas: var(--color-alabaster-white-50);
+  --color-ink-base: var(--color-velvet-black-600);
+  --color-ink-deep: var(--color-velvet-black-700);
 }
