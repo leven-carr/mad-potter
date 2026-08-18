@@ -23,6 +23,9 @@
 }
 
 @theme {
+  /* Breakpoints */
+  --breakpoint-lg: 992px;
+
   /* Fonts */
   --font-sans: "Figtree Variable", sans-serif;
   --font-display: "Capriola Variable", sans-serif;
