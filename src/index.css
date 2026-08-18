@@ -55,6 +55,8 @@
   --color-canvas: var(--color-alabaster-white-50);
   --color-ink-base: var(--color-velvet-black-600);
   --color-ink-deep: var(--color-velvet-black-700);
+
+  --color-brand-accent-hover: var(--color-raspberry-300);
 }
 
 @layer base {
