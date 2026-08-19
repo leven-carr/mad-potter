@@ -20,11 +20,9 @@ function Navbar() {
 
         <nav className="hidden items-center justify-evenly text-lg tracking-wide lg:text-2xl md:flex md:flex-1">
           <a href="/" className="py-2.5 hover:text-brand-accent-hover">
-            Parties
+            Parties & Keepsakes
           </a>
-          <a href="/" className="py-2.5 hover:text-brand-accent-hover">
-            Our Team
-          </a>
+
           <a href="/" className="py-2.5 hover:text-brand-accent-hover">
             Gallery
           </a>
