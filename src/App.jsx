@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="grow">
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
