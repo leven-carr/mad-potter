@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
 import {
   Dialog,
   DialogPanel,
@@ -7,8 +7,9 @@ import {
   CloseButton,
 } from "@headlessui/react";
 import { IoChevronBackCircle } from "react-icons/io5";
-import { FiExternalLink } from "react-icons/fi";
 import logoLight from "../assets/images/logo-light.svg";
+import { NAV_LINKS } from "../constants/navigation";
+import NavLinkItem from "./NavLinkItem";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,31 +30,9 @@ function Navbar() {
         </Link>
 
         <nav className="hidden items-center justify-around text-lg tracking-wide md:flex md:flex-1 lg:text-xl">
-          <NavLink to="/parties-and-keepsakes" className="interactive p-2">
-            Parties & Keepsakes
-          </NavLink>
-
-          <NavLink to="/gallery" className="interactive p-2">
-            Gallery
-          </NavLink>
-
-          <a
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-start interactive p-2"
-          >
-            <span>Calendar</span>
-            <span className="sr-only"> (opens in a new tab)</span>
-            <FiExternalLink
-              aria-hidden="true"
-              className="ml-0.5 h-4 w-4 lg:h-5 lg:w-5"
-            />
-          </a>
-
-          <NavLink to="/contact-us" className="interactive p-2">
-            Contact Us
-          </NavLink>
+          {NAV_LINKS.map((item) => (
+            <NavLinkItem key={item.to} link={item} />
+          ))}
         </nav>
 
         <button
@@ -86,40 +65,9 @@ function Navbar() {
             transition
             className="fixed top-16 right-0 bottom-0 -mt-0.5 flex w-full max-w-56 flex-col gap-6 bg-brand-primary px-10 py-6 text-center text-lg text-brand-secondary transition duration-500 data-closed:translate-x-full"
           >
-            <CloseButton
-              as={NavLink}
-              to="/parties-and-keepsakes"
-              className="interactive p-2"
-            >
-              Parties & Keepsakes
-            </CloseButton>
-
-            <CloseButton as={NavLink} to="/gallery" className="interactive p-2">
-              Gallery
-            </CloseButton>
-
-            <CloseButton
-              as="a"
-              href="/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start justify-center interactive p-2"
-            >
-              <span>Calendar</span>
-              <span className="sr-only"> (opens in a new tab)</span>
-              <FiExternalLink
-                aria-hidden="true"
-                className="ml-0.5 h-4 w-4 lg:h-5 lg:w-5"
-              />
-            </CloseButton>
-
-            <CloseButton
-              as={NavLink}
-              to="/contact-us"
-              className="interactive p-2"
-            >
-              Contact Us
-            </CloseButton>
+            {NAV_LINKS.map((item) => (
+              <CloseButton key={item.to} as={NavLinkItem} link={item} />
+            ))}
           </DialogPanel>
         </div>
       </Dialog>
