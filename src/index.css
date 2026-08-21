@@ -76,3 +76,25 @@
     flex-grow: 1;
   }
 }
+
+@utility nav-link {
+  border-radius: var(--radius-xs);
+  transition: color 0.25s;
+
+  &:hover {
+    color: var(--color-brand-hover);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-brand-secondary);
+    outline-offset: 0.25rem;
+  }
+
+  &[aria-current="page"] {
+    color: var(--color-brand-active);
+  }
+}
