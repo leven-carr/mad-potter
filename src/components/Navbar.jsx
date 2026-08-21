@@ -1,15 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import {
-  Dialog,
-  DialogPanel,
-  DialogBackdrop,
-  CloseButton,
-} from "@headlessui/react";
 import { IoChevronBackCircle } from "react-icons/io5";
-import logoLight from "../assets/images/logo-light.svg";
 import { NAV_LINKS } from "../constants/navigation";
 import NavLinkItem from "./NavLinkItem";
+import MobileMenu from "./MobileMenu";
+import logoLight from "../assets/images/logo-light.svg";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,29 +43,11 @@ function Navbar() {
         </button>
       </div>
 
-      <Dialog
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-        className="relative md:hidden"
-      >
-        <DialogBackdrop
-          transition
-          className="fixed inset-0 bg-ink-deep/30 backdrop-blur-xs transition-opacity duration-500 data-closed:opacity-0"
-        />
-
-        <div className="fixed inset-0">
-          <DialogPanel
-            as="nav"
-            aria-label="Mobile menu"
-            transition
-            className="fixed top-16 right-0 bottom-0 -mt-0.5 flex w-full max-w-56 flex-col gap-6 bg-brand-primary px-10 py-6 text-center text-lg text-brand-secondary transition duration-500 data-closed:translate-x-full"
-          >
-            {NAV_LINKS.map((item) => (
-              <CloseButton key={item.to} as={NavLinkItem} link={item} />
-            ))}
-          </DialogPanel>
-        </div>
-      </Dialog>
+      <MobileMenu
+        isOpen={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+        links={NAV_LINKS}
+      />
     </header>
   );
 }
