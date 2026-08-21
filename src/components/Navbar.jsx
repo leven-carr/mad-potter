@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router";
 import {
@@ -16,7 +15,7 @@ function Navbar() {
 
   return (
     <header className="relative z-50 w-full bg-brand-primary text-brand-secondary">
-      <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between px-6 md:gap-16 lg:min-h-22 lg:px-10">
+      <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between px-6 md:gap-10 lg:min-h-22 lg:gap-16 lg:px-10">
         <Link
           to="/"
           end
@@ -29,18 +28,12 @@ function Navbar() {
           />
         </Link>
 
-        <nav className="hidden items-center justify-between text-lg tracking-wide md:flex md:flex-1 lg:text-2xl">
-          <NavLink
-            to="/parties-and-keepsakes"
-            className="hover:text-brand-hover aria-[current=page]:text-brand-active"
-          >
+        <nav className="hidden items-center justify-around text-lg tracking-wide md:flex md:flex-1 lg:text-xl">
+          <NavLink to="/parties-and-keepsakes" className="nav-link">
             Parties & Keepsakes
           </NavLink>
 
-          <NavLink
-            to="/gallery"
-            className="hover:text-brand-hover aria-[current=page]:text-brand-active"
-          >
+          <NavLink to="/gallery" className="nav-link">
             Gallery
           </NavLink>
 
@@ -48,7 +41,7 @@ function Navbar() {
             href="/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-start hover:text-brand-hover"
+            className="flex items-start nav-link"
           >
             <span>Calendar</span>
             <span className="sr-only"> (opens in a new tab)</span>
@@ -58,10 +51,7 @@ function Navbar() {
             />
           </a>
 
-          <NavLink
-            to="/contact-us"
-            className="hover:text-brand-hover aria-[current=page]:text-brand-active"
-          >
+          <NavLink to="/contact-us" className="nav-link">
             Contact Us
           </NavLink>
         </nav>
@@ -99,16 +89,12 @@ function Navbar() {
             <CloseButton
               as={NavLink}
               to="/parties-and-keepsakes"
-              className="hover:text-brand-hover aria-[current=page]:text-brand-active"
+              className="nav-link"
             >
               Parties & Keepsakes
             </CloseButton>
 
-            <CloseButton
-              as={NavLink}
-              to="/gallery"
-              className="hover:text-brand-hover aria-[current=page]:text-brand-active"
-            >
+            <CloseButton as={NavLink} to="/gallery" className="nav-link">
               Gallery
             </CloseButton>
 
@@ -117,7 +103,7 @@ function Navbar() {
               href="/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start justify-center hover:text-brand-hover"
+              className="flex items-start justify-center nav-link"
             >
               <span>Calendar</span>
               <span className="sr-only"> (opens in a new tab)</span>
@@ -127,11 +113,7 @@ function Navbar() {
               />
             </CloseButton>
 
-            <CloseButton
-              as={NavLink}
-              to="/contact-us"
-              className="hover:text-brand-hover aria-[current=page]:text-brand-active"
-            >
+            <CloseButton as={NavLink} to="/contact-us" className="nav-link">
               Contact Us
             </CloseButton>
           </DialogPanel>
