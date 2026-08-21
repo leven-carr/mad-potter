@@ -15,11 +15,11 @@ function Navbar() {
 
   return (
     <header className="relative z-50 w-full bg-brand-primary text-brand-secondary">
-      <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between px-6 md:gap-10 lg:min-h-22 lg:gap-16 lg:px-10">
+      <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between px-4.5 md:gap-10 lg:min-h-22 lg:gap-16 lg:px-10">
         <Link
           to="/"
           end
-          className="flex items-center rounded-sm py-2.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-secondary"
+          className="flex items-center interactive rounded-sm px-1.5 py-2.5"
         >
           <img
             src={logoLight}
@@ -29,11 +29,11 @@ function Navbar() {
         </Link>
 
         <nav className="hidden items-center justify-around text-lg tracking-wide md:flex md:flex-1 lg:text-xl">
-          <NavLink to="/parties-and-keepsakes" className="nav-link">
+          <NavLink to="/parties-and-keepsakes" className="interactive p-2">
             Parties & Keepsakes
           </NavLink>
 
-          <NavLink to="/gallery" className="nav-link">
+          <NavLink to="/gallery" className="interactive p-2">
             Gallery
           </NavLink>
 
@@ -41,7 +41,7 @@ function Navbar() {
             href="/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-start nav-link"
+            className="flex items-start interactive p-2"
           >
             <span>Calendar</span>
             <span className="sr-only"> (opens in a new tab)</span>
@@ -51,7 +51,7 @@ function Navbar() {
             />
           </a>
 
-          <NavLink to="/contact-us" className="nav-link">
+          <NavLink to="/contact-us" className="interactive p-2">
             Contact Us
           </NavLink>
         </nav>
@@ -60,7 +60,7 @@ function Navbar() {
           type="button"
           aria-label="Toggle mobile menu"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={`flex cursor-pointer items-center justify-center rounded-sm p-1.5 transition-colors duration-300 hover:text-brand-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-secondary md:hidden ${mobileMenuOpen && "text-brand-hover"}`}
+          className={`flex cursor-pointer items-center justify-center interactive rounded-sm p-1.5 md:hidden ${mobileMenuOpen && "text-brand-hover"}`}
         >
           <IoChevronBackCircle
             aria-hidden="true"
@@ -84,17 +84,17 @@ function Navbar() {
             as="nav"
             aria-label="Mobile menu"
             transition
-            className="fixed top-16 right-0 bottom-0 -mt-0.5 flex w-full max-w-64 flex-col gap-6 bg-brand-primary px-10 py-6 text-center text-lg text-brand-secondary transition duration-500 data-closed:translate-x-full"
+            className="fixed top-16 right-0 bottom-0 -mt-0.5 flex w-full max-w-56 flex-col gap-6 bg-brand-primary px-10 py-6 text-center text-lg text-brand-secondary transition duration-500 data-closed:translate-x-full"
           >
             <CloseButton
               as={NavLink}
               to="/parties-and-keepsakes"
-              className="nav-link"
+              className="interactive p-2"
             >
               Parties & Keepsakes
             </CloseButton>
 
-            <CloseButton as={NavLink} to="/gallery" className="nav-link">
+            <CloseButton as={NavLink} to="/gallery" className="interactive p-2">
               Gallery
             </CloseButton>
 
@@ -103,7 +103,7 @@ function Navbar() {
               href="/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start justify-center nav-link"
+              className="flex items-start justify-center interactive p-2"
             >
               <span>Calendar</span>
               <span className="sr-only"> (opens in a new tab)</span>
@@ -113,7 +113,11 @@ function Navbar() {
               />
             </CloseButton>
 
-            <CloseButton as={NavLink} to="/contact-us" className="nav-link">
+            <CloseButton
+              as={NavLink}
+              to="/contact-us"
+              className="interactive p-2"
+            >
               Contact Us
             </CloseButton>
           </DialogPanel>
