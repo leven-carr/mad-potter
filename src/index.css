@@ -67,13 +67,7 @@
   body {
     background-color: var(--color-canvas);
     color: var(--color-ink-base);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  main {
-    flex-grow: 1;
+    letter-spacing: var(--tracking-wide);
   }
 }
 
