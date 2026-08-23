@@ -24,7 +24,7 @@ function Navbar() {
           />
         </Link>
 
-        <nav className="hidden items-center justify-around text-lg tracking-wide md:flex md:flex-1 lg:text-xl">
+        <nav className="hidden items-center justify-around text-lg md:flex md:flex-1 lg:text-xl">
           {NAV_LINKS.map((item) => (
             <NavLinkItem key={item.to} link={item} />
           ))}
