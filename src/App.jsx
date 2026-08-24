@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import PartiesKeepsakes from "./pages/PartiesKeepsakes";
 import Gallery from "./pages/Gallery";
@@ -20,6 +21,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }
