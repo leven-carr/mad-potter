@@ -13,10 +13,7 @@ function NavLinkItem({ link, className = "interactive p-2", ...props }) {
       >
         <span>{link.label}</span>
         <span className="sr-only"> (opens in a new tab)</span>
-        <FiExternalLink
-          aria-hidden="true"
-          className="ml-0.5 h-4 w-4 lg:h-5 lg:w-5"
-        />
+        <FiExternalLink aria-hidden="true" className="ml-0.5" />
       </a>
     );
   }
