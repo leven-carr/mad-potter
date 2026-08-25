@@ -2,6 +2,7 @@ import { FaMapPin, FaFacebook, FaInstagram } from "react-icons/fa6";
 import { CustomTbPhone, CustomLuMail } from "./icons";
 import { NAV_LINKS } from "../constants/navigation";
 import NavLinkItem from "./NavLinkItem";
+import HorizontalRule from "./HorizontalRule";
 
 function Footer() {
   return (
@@ -27,16 +28,7 @@ function Footer() {
           </div>
         </section>
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1000 100"
-          className="w-60"
-        >
-          <path
-            fill="#F0DCFE"
-            d="M990 45H535l-35-35-35 35H10v10h455l35 35 35-35h455V45z"
-          ></path>
-        </svg>
+        <HorizontalRule className="w-60 fill-brand-secondary" />
 
         <section className="flex flex-col gap-2 px-6">
           <h2 className="text-center text-lg font-semibold">Hours</h2>
@@ -54,16 +46,7 @@ function Footer() {
           </div>
         </section>
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1000 100"
-          className="w-60"
-        >
-          <path
-            fill="#F0DCFE"
-            d="M990 45H535l-35-35-35 35H10v10h455l35 35 35-35h455V45z"
-          ></path>
-        </svg>
+        <HorizontalRule className="w-60 fill-brand-secondary" />
 
         <nav className="flex flex-wrap justify-center gap-2 px-6">
           {NAV_LINKS.map((item) => (
@@ -75,16 +58,7 @@ function Footer() {
           ))}
         </nav>
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1000 100"
-          className="w-60"
-        >
-          <path
-            fill="#F0DCFE"
-            d="M990 45H535l-35-35-35 35H10v10h455l35 35 35-35h455V45z"
-          ></path>
-        </svg>
+        <HorizontalRule className="w-60 fill-brand-secondary" />
 
         <section className="flex gap-4 px-6 text-3xl">
           <a href="" className="interactive p-2">
