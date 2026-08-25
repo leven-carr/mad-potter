@@ -89,5 +89,17 @@
 
   &[aria-current="page"] {
     color: var(--color-brand-active);
+
+    &:hover {
+      color: var(--color-brand-hover);
+    }
+  }
+
+  footer &[aria-current="page"] {
+    color: inherit;
+
+    &:hover {
+      color: var(--color-brand-hover);
+    }
   }
 }
