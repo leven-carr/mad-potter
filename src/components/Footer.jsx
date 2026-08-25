@@ -3,6 +3,7 @@ import { CustomTbPhone, CustomLuMail } from "./icons";
 import { NAV_LINKS } from "../constants/navigation";
 import NavLinkItem from "./NavLinkItem";
 import HorizontalRule from "./HorizontalRule";
+import logoSubmark from "../assets/images/logo-submark.svg";
 
 function Footer() {
   return (
@@ -65,6 +66,11 @@ function Footer() {
         <HorizontalRule className="w-60 fill-brand-secondary" />
 
         <nav className="flex flex-wrap justify-center gap-2">
+          <NavLinkItem
+            link={{ to: "/", label: "Home" }}
+            className="interactive p-3"
+          />
+
           {NAV_LINKS.map((item) => (
             <NavLinkItem
               key={item.to}
@@ -87,6 +93,7 @@ function Footer() {
 
         <HorizontalRule className="w-60 fill-brand-secondary" />
 
+        <img src={logoSubmark} alt="Mad Potter" className="max-w-64" />
         <section className="flex gap-2">
           <p>
             <strong>Disclaimer:</strong> This website is an unofficial frontend
