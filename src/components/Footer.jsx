@@ -11,8 +11,8 @@ function Footer() {
     <>
       <footer className="relative mt-20 w-full bg-brand-primary text-brand-secondary">
         <ShapeDivider />
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 py-10">
-          <section className="flex flex-col gap-2">
+        <div className="mx-auto footer-grid max-w-7xl px-6 py-8">
+          <section className="footer-contact flex flex-col">
             <h2 className="text-center text-lg leading-loose font-semibold">
               Contact Us
             </h2>
@@ -46,9 +46,9 @@ function Footer() {
             </div>
           </section>
 
-          <HorizontalRule className="w-60 fill-brand-secondary" />
+          <HorizontalRule className="footer-rule-left w-60 fill-brand-secondary" />
 
-          <section className="flex flex-col gap-2">
+          <section className="footer-hours flex flex-col">
             <h2 className="text-center text-lg leading-loose font-semibold">
               Hours
             </h2>
@@ -66,13 +66,13 @@ function Footer() {
             </div>
           </section>
 
-          <HorizontalRule className="w-60 fill-brand-secondary" />
+          <HorizontalRule className="w-60 fill-brand-secondary md:hidden" />
 
-          <section className="flex flex-col gap-2">
+          <section className="footer-links flex flex-col">
             <h2 className="text-center text-lg leading-loose font-semibold">
               Links
             </h2>
-            <nav className="flex flex-wrap justify-center gap-4">
+            <nav className="flex flex-wrap items-center justify-center gap-2">
               <NavLinkItem
                 link={{ to: "/", label: "Home" }}
                 className="interactive p-2"
@@ -86,14 +86,21 @@ function Footer() {
                 />
               ))}
             </nav>
+          </section>
 
-            <div className="flex justify-center gap-4 text-3xl">
+          <HorizontalRule className="footer-rule-right w-60 fill-brand-secondary" />
+
+          <section className="footer-socials flex flex-col">
+            <h2 className="text-center text-lg leading-loose font-semibold">
+              Social Media
+            </h2>
+            <div className="mt-1 flex justify-center gap-6 text-4xl">
               <a
                 href="https://www.facebook.com/madpotterstudiomason/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit us on Facebook"
-                className="interactive p-3"
+                className="interactive p-2"
               >
                 <FaFacebook />
               </a>
@@ -102,18 +109,20 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit us on Instagram"
-                className="interactive p-3"
+                className="interactive p-2"
               >
                 <FaInstagram />
               </a>
             </div>
           </section>
 
-          <HorizontalRule className="w-60 fill-brand-secondary" />
+          <img
+            src={logoSubmark}
+            alt="Mad Potter"
+            className="footer-logo max-w-64 md:max-w-80"
+          />
 
-          <img src={logoSubmark} alt="Mad Potter" className="max-w-64" />
-
-          <p>
+          <p className="footer-notice">
             <strong>Disclaimer:</strong> This website is an unofficial frontend
             development concept redesign created for portfolio use. It is not
             affiliated with nor endorsed by Mad Potter.
