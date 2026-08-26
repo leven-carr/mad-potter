@@ -8,7 +8,7 @@ function NavLinkItem({ link, className = "interactive p-2", ...props }) {
         href={link.to}
         target="_blank"
         rel="noopener noreferrer"
-        className={`flex items-start justify-center ${className}`}
+        className={`flex items-start ${className}`}
         {...props}
       >
         <span>{link.label}</span>
