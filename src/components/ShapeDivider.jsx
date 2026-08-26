@@ -1,15 +1,38 @@
+import { useState, useEffect } from "react";
+
 // Shape divider wave generated with Get Waves on Figma
 function ShapeDivider() {
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    // Define the media query matching Tailwind's 2xl breakpoint
+    const mediaQuery = window.matchMedia("(min-width: 1536px)");
+
+    // Set the initial state correctly on mount
+    setIsLargeScreen(mediaQuery.matches);
+
+    // Create an event handler
+    const handleQueryChange = (event) => {
+      setIsLargeScreen(event.matches);
+    };
+
+    // Listen only for the crossover event
+    mediaQuery.addEventListener("change", handleQueryChange);
+
+    // Clean up listener when component unmounts
+    return () => mediaQuery.removeEventListener("change", handleQueryChange);
+  }, []);
+
   return (
-    <div className="absolute bottom-full left-0 w-full overflow-hidden fill-brand-primary">
+    <div className="absolute bottom-full left-0 w-full translate-y-px overflow-hidden fill-brand-primary">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         // width="1440"
         // height="80"
         // fill="none"
         viewBox="0 0 1440 80"
-        className="h-16 w-full"
-        preserveAspectRatio="xMidYMax slice"
+        className="h-20 w-full"
+        preserveAspectRatio={isLargeScreen ? "none" : "xMidYMid slice"}
       >
         <path
           fill="#4d0076"
