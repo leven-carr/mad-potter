@@ -12,7 +12,7 @@ function Footer() {
       <footer className="relative mt-20 w-full bg-brand-primary text-brand-secondary">
         <ShapeDivider />
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 py-10">
-          <section className="flex flex-col">
+          <section className="flex flex-col gap-2">
             <h2 className="text-center text-lg leading-loose font-semibold">
               Contact Us
             </h2>
@@ -52,15 +52,15 @@ function Footer() {
             <h2 className="text-center text-lg leading-loose font-semibold">
               Hours
             </h2>
-            <div className="flex gap-4">
+            <div className="flex gap-4 p-2">
               <span className="font-semibold">Sun: </span>
               <span>1 – 6 PM</span>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 p-2">
               <span className="font-semibold">Mon – Fri: </span>
               <span>11 AM – 9 PM</span>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 p-2">
               <span className="font-semibold">Sat: </span>
               <span>10 AM – 9 PM</span>
             </div>
@@ -72,17 +72,17 @@ function Footer() {
             <h2 className="text-center text-lg leading-loose font-semibold">
               Links
             </h2>
-            <nav className="flex flex-wrap justify-center gap-2">
+            <nav className="flex flex-wrap justify-center gap-4">
               <NavLinkItem
                 link={{ to: "/", label: "Home" }}
-                className="interactive p-3"
+                className="interactive p-2"
               />
 
               {NAV_LINKS.map((item) => (
                 <NavLinkItem
                   key={item.to}
                   link={item}
-                  className="interactive p-3"
+                  className="interactive p-2"
                 />
               ))}
             </nav>
