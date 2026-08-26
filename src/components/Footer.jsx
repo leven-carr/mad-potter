@@ -88,10 +88,22 @@ function Footer() {
             </nav>
 
             <div className="flex justify-center gap-4 text-3xl">
-              <a href="" className="interactive p-3">
+              <a
+                href="https://www.facebook.com/madpotterstudiomason/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit us on Facebook"
+                className="interactive p-3"
+              >
                 <FaFacebook />
               </a>
-              <a href="" className="interactive p-3">
+              <a
+                href="https://www.instagram.com/madpottermason/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit us on Instagram"
+                className="interactive p-3"
+              >
                 <FaInstagram />
               </a>
             </div>
