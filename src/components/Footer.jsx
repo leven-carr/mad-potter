@@ -68,42 +68,44 @@ function Footer() {
 
           <HorizontalRule className="w-60 fill-brand-secondary" />
 
-          <nav className="flex flex-wrap justify-center gap-2">
-            <NavLinkItem
-              link={{ to: "/", label: "Home" }}
-              className="interactive p-3"
-            />
-
-            {NAV_LINKS.map((item) => (
+          <section className="flex flex-col gap-2">
+            <h2 className="text-center text-lg leading-loose font-semibold">
+              Links
+            </h2>
+            <nav className="flex flex-wrap justify-center gap-2">
               <NavLinkItem
-                key={item.to}
-                link={item}
+                link={{ to: "/", label: "Home" }}
                 className="interactive p-3"
               />
-            ))}
-          </nav>
 
-          <HorizontalRule className="w-60 fill-brand-secondary" />
+              {NAV_LINKS.map((item) => (
+                <NavLinkItem
+                  key={item.to}
+                  link={item}
+                  className="interactive p-3"
+                />
+              ))}
+            </nav>
 
-          <section className="flex gap-4 text-3xl">
-            <a href="" className="interactive p-2">
-              <FaFacebook />
-            </a>
-            <a href="" className="interactive p-2">
-              <FaInstagram />
-            </a>
+            <div className="flex justify-center gap-4 text-3xl">
+              <a href="" className="interactive p-3">
+                <FaFacebook />
+              </a>
+              <a href="" className="interactive p-3">
+                <FaInstagram />
+              </a>
+            </div>
           </section>
 
           <HorizontalRule className="w-60 fill-brand-secondary" />
 
           <img src={logoSubmark} alt="Mad Potter" className="max-w-64" />
-          <section className="flex gap-2">
-            <p>
-              <strong>Disclaimer:</strong> This website is an unofficial
-              frontend development concept redesign created for portfolio use.
-              It is not affiliated with nor endorsed by Mad Potter.
-            </p>
-          </section>
+
+          <p>
+            <strong>Disclaimer:</strong> This website is an unofficial frontend
+            development concept redesign created for portfolio use. It is not
+            affiliated with nor endorsed by Mad Potter.
+          </p>
         </div>
       </footer>
     </>
