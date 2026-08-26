@@ -103,3 +103,62 @@
     }
   }
 }
+
+@utility footer-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+
+  & > * {
+    grid-area: auto;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "contact links"
+      "rule-left rule-right"
+      "hours socials"
+      "logo logo"
+      "notice notice";
+
+    & .footer-contact {
+      grid-area: contact;
+    }
+
+    & .footer-rule-left {
+      grid-area: rule-left;
+    }
+
+    & .footer-hours {
+      grid-area: hours;
+    }
+
+    & .footer-links {
+      grid-area: links;
+    }
+
+    & .footer-rule-right {
+      grid-area: rule-right;
+    }
+
+    & .footer-logo {
+      grid-area: logo;
+    }
+
+    & .footer-notice {
+      grid-area: notice;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "contact logo links"
+      "rule-left logo rule-right"
+      "hours logo socials"
+      "notice notice notice";
+  }
+}
