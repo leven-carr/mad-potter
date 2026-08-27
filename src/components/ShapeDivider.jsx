@@ -31,7 +31,7 @@ function ShapeDivider() {
         // height="80"
         // fill="none"
         viewBox="0 0 1440 80"
-        className="h-20 w-full"
+        className="h-16 w-full lg:h-20"
         preserveAspectRatio={isLargeScreen ? "none" : "xMidYMid slice"}
       >
         <path

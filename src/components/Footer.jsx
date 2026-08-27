@@ -9,7 +9,7 @@ import logoSubmark from "../assets/images/logo-submark.svg";
 function Footer() {
   return (
     <>
-      <footer className="relative mt-20 w-full bg-brand-primary text-brand-secondary">
+      <footer className="relative w-full bg-brand-primary text-brand-secondary">
         <ShapeDivider />
         <div className="mx-auto footer-grid max-w-7xl px-6 py-8">
           <section className="footer-contact flex flex-col">
