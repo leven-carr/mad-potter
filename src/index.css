@@ -70,6 +70,14 @@
       color-mix(in srgb, var(--color-canvas) 60%, transparent)
     ),
     url("./assets/images/hero-mobile.jpg");
+
+  --background-image-hero-desktop:
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-canvas) 90%, transparent),
+      color-mix(in srgb, var(--color-canvas) 60%, transparent)
+    ),
+    url("./assets/images/hero-desktop.jpg");
 }
 
 @layer base {
