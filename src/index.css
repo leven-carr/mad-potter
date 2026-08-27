@@ -61,6 +61,15 @@
 
   --color-brand-hover: var(--color-raspberry-300);
   --color-brand-active: var(--color-clay-tan-100);
+
+  /* Background Images */
+  --background-image-hero-mobile:
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-canvas) 90%, transparent),
+      color-mix(in srgb, var(--color-canvas) 60%, transparent)
+    ),
+    url("./assets/images/hero-mobile.jpg");
 }
 
 @layer base {
