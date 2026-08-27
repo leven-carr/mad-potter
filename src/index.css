@@ -78,6 +78,8 @@
       color-mix(in srgb, var(--color-canvas) 60%, transparent)
     ),
     url("./assets/images/hero-desktop.jpg");
+
+  --background-image-confetti: url("./assets/images/confetti-bg.svg");
 }
 
 @layer base {
@@ -109,6 +111,15 @@
 
     &:hover {
       color: var(--color-brand-hover);
+    }
+  }
+
+  p > & {
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+
+    &:focus-visible {
+      outline: 2px solid var(--color-brand-primary);
     }
   }
 
