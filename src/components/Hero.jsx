@@ -3,8 +3,8 @@ import logoHoriStack from "../assets/images/logo-hori-stack.svg";
 
 function Hero() {
   return (
-    <section className="w-full bg-hero-mobile bg-cover bg-center text-ink-base md:bg-hero-desktop">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-10 px-6 pt-10 pb-26 md:gap-16 md:pt-24 md:pb-40">
+    <section className="w-full bg-hero-mobile bg-cover bg-center md:bg-hero-desktop">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-10 px-6 py-10 md:gap-12 md:py-24">
         <img
           src={logoVertStack}
           alt=""
