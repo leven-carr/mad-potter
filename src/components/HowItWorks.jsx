@@ -15,7 +15,7 @@ function HowItWorks() {
           </p>
         </article>
 
-        <div className="flex flex-col items-center justify-center gap-8">
+        <div className="flex flex-col items-center justify-center gap-6">
           {FAQ_DATA.map((faq) => {
             return <FAQCard key={faq.id} data={faq} />;
           })}
