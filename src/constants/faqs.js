@@ -24,7 +24,7 @@ export const FAQ_DATA = [
 
   {
     id: "pricing",
-    question: "How much can I expect to spend when I visit the studio?",
+    question: "How much should I plan to spend?",
     answers: [
       "Payment consists of the price of your piece + an $8 studio fee that covers painting, glazing, and kiln-firing for up to 2 pieces per person. For kids age 12 and under, the studio fee is reduced to $6. We have a variety of pieces for you to choose from, ranging in price from about $5 to $40.",
       "Please visit our [LINK] to see when we may be running promotions!",
