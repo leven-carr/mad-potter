@@ -1,5 +1,15 @@
 export const FAQ_DATA = [
   {
+    id: "painting",
+    question: "What kinds of pottery do you have?",
+    answers: [
+      "We have hundreds of pottery pieces for you to choose from, including dishware such as bowls, platters, and mugs, as well as decor like picture frames, seasonal items, and much more! Our team will help you design and paint a one-of-a-kind piece; we provide stamps, stencils, and any support we can give to help inspire you.",
+      "When you're finished, your piece stays with us to be glazed and fired, and can be picked up after one week. The finished pottery will be food safe and can go in the dishwasher, microwave, or oven.",
+    ],
+    iconName: "palette",
+  },
+
+  {
     id: "reservation",
     question: "Do I need to make a reservation?",
     answers: [
@@ -11,15 +21,6 @@ export const FAQ_DATA = [
       to: "/parties-and-keepsakes",
       label: "Parties",
     },
-  },
-
-  {
-    id: "pickup",
-    question: "When can I take my piece home?",
-    answers: [
-      "Unfortunately, your piece has to stay with us for a week. The kiln takes time to work its magic. Please note that due to the volume of pieces that we have, we rely on you to remember that your piece is in the studio; we do not call to let you know that it is ready for pick-up.",
-    ],
-    iconName: "hourglass",
   },
 
   {
@@ -35,6 +36,15 @@ export const FAQ_DATA = [
       label: "Calendar",
       isExternal: true,
     },
+  },
+
+  {
+    id: "pickup",
+    question: "When can I take my piece home?",
+    answers: [
+      "Unfortunately, your piece has to stay with us for a week. The kiln takes time to work its magic. Please note that due to the volume of pieces that we have, we rely on you to remember that your piece is in the studio; we do not call to let you know that it is ready for pick-up.",
+    ],
+    iconName: "hourglass",
   },
 
   {
