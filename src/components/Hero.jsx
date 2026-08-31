@@ -16,9 +16,10 @@ function Hero() {
           className="hidden w-full max-w-xl md:block"
         />
         <p className="max-w-lg rounded-2xl bg-brand-secondary/60 p-6 text-center text-lg tracking-wider backdrop-blur-xs">
-          Welcome to Mad Potter, where creativity comes to life! We provide a
-          fun and colorful atmosphere where you can paint a one-of-a-kind piece
-          for your own home, or to give as a heartfelt gift.
+          Welcome to Mad Potter, where creativity comes to life! Step into a
+          colorful, hands-on studio home to fun, memories, and masterpieces. No
+          experience needed, just bring your imagination and we'll handle the
+          rest!
         </p>
       </div>
     </section>
