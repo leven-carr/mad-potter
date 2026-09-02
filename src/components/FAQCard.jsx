@@ -28,11 +28,11 @@ function FAQCard({ data }) {
   return (
     <Disclosure
       as="article"
-      className="flex w-full max-w-md flex-col justify-center gap-6 divide-y-2 divide-ink-base/15 rounded-2xl border-2 border-ink-base/15 bg-canvas/80 p-6 shadow-md backdrop-blur-[10px] md:max-w-xl"
+      className="group flex w-full max-w-md flex-col justify-center rounded-2xl border-2 border-ink-base/15 bg-canvas/80 p-6 shadow-md backdrop-blur-[10px] md:max-w-xl"
     >
-      <DisclosureButton className="group flex flex-col gap-4 data-open:pb-6 md:flex-row md:items-center md:justify-between">
-        <div className="flex w-fit items-center gap-4">
-          <IoChevronDownCircle className="size-10 shrink-0 text-ink-base/25" />
+      <DisclosureButton className="flex cursor-pointer flex-col gap-4 interactive transition-[padding] duration-300 ease-in-out data-open:pb-4 md:flex-row md:items-center md:justify-between">
+        <div className="flex items-center gap-4">
+          <IoChevronDownCircle className="faq-icon size-10 shrink-0 text-ink-base/25 transition-transform duration-450 ease-in-out group-data-open:rotate-180" />
           <h3 className="text-left indent-[0.35em_hanging] text-xl font-medium">
             "{question}"
           </h3>
@@ -40,12 +40,19 @@ function FAQCard({ data }) {
         <Icon className="size-16 self-center" />
       </DisclosureButton>
 
-      <DisclosurePanel className="flex flex-col gap-4">
-        {answers.map((answer, i) => (
-          <p key={i} className="text-medium font-medium">
-            {parseAnswer(answer)}
-          </p>
-        ))}
+      <div className="h-0.5 w-full origin-center scale-x-0 transform-gpu rounded-full bg-ink-base/15 transition-transform duration-450 ease-in-out group-data-open:scale-x-100" />
+
+      <DisclosurePanel
+        transition
+        className="grid grid-rows-[1fr] overflow-hidden pt-6 transition-[grid-template-rows,padding] duration-300 ease-in-out data-closed:grid-rows-[0fr] data-closed:pt-0"
+      >
+        <div className="flex flex-col gap-4 overflow-hidden">
+          {answers.map((answer, i) => (
+            <p key={i} className="text-medium font-medium">
+              {parseAnswer(answer)}
+            </p>
+          ))}
+        </div>
       </DisclosurePanel>
     </Disclosure>
   );
