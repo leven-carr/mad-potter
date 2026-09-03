@@ -30,7 +30,7 @@ function FAQCard({ data }) {
       as="article"
       className="group flex w-full max-w-md flex-col justify-center rounded-2xl border-2 border-ink-base/15 bg-canvas/80 p-6 shadow-md backdrop-blur-[10px] md:max-w-xl"
     >
-      <DisclosureButton className="flex cursor-pointer flex-col gap-4 interactive transition-[padding] duration-300 ease-in-out data-open:pb-4 md:flex-row md:items-center md:justify-between">
+      <DisclosureButton className="flex cursor-pointer flex-col gap-4 interactive transition-[padding] duration-300 ease-in-out data-open:pb-6 md:flex-row md:items-center md:justify-between md:data-open:pb-4">
         <div className="flex items-center gap-4">
           <IoChevronDownCircle className="faq-icon size-10 shrink-0 text-ink-base/25 transition-transform duration-450 ease-in-out group-data-open:rotate-180" />
           <h3 className="text-left indent-[0.35em_hanging] text-xl font-medium">
