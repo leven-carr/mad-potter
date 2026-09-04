@@ -148,6 +148,39 @@
   }
 }
 
+@utility how-it-works-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+
+  & > * {
+    grid-area: auto;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto 1fr;
+
+    & .hiw-title {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    & .hiw-img {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    & .hiw-faqs {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      /* align-self: center; */
+    }
+  }
+}
+
 @utility footer-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));

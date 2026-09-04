@@ -48,7 +48,7 @@ function FAQCard({ data }) {
       >
         <div className="flex flex-col gap-4 overflow-hidden">
           {answers.map((answer, i) => (
-            <p key={i} className="text-medium font-medium">
+            <p key={i} className="text-base font-medium lg:text-lg">
               {parseAnswer(answer)}
             </p>
           ))}
