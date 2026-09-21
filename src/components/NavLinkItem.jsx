@@ -1,7 +1,12 @@
 import { NavLink } from "react-router";
 import { FiExternalLink } from "react-icons/fi";
 
-function NavLinkItem({ link, className = "interactive p-2", ...props }) {
+function NavLinkItem({
+  link,
+  className = "interactive p-2",
+  children,
+  ...props
+}) {
   if (link.isExternal) {
     return (
       <a
@@ -21,6 +26,7 @@ function NavLinkItem({ link, className = "interactive p-2", ...props }) {
   return (
     <NavLink to={link.to} className={className} {...props}>
       {link.label}
+      {children}
     </NavLink>
   );
 }
