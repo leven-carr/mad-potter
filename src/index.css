@@ -72,6 +72,9 @@
     url("./assets/images/hero.jpg");
 
   --background-image-confetti: url("./assets/images/confetti-bg.svg");
+
+  /* Animation */
+  --ease-bounce: cubic-bezier(0.34, 1.8, 0.64, 1);
 }
 
 @layer base {
@@ -118,7 +121,7 @@
 
       & div:has(.faq-icon) {
         border-radius: var(--radius-sm);
-        outline: 2px solid var(--color-purple-500);
+        outline: 2px solid var(--color-brand-primary);
         outline-offset: 2px;
       }
     }
@@ -134,6 +137,19 @@
     }
   }
 
+  /* CTA Button */
+  &.cta-button {
+    &:hover {
+      color: var(--color-canvas);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-brand-primary);
+      outline-offset: 0px;
+    }
+  }
+
+  /* Footer Links */
   footer &[aria-current="page"] {
     color: inherit;
 
@@ -171,8 +187,19 @@
     & .hiw-faqs {
       grid-column: 2;
       grid-row: 1 / span 2;
-      /* align-self: center; */
     }
+  }
+}
+
+@utility cta-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
