@@ -38,8 +38,8 @@ function FormSelectField() {
 
         <ListboxOptions
           modal={false}
-          anchor="bottom"
-          className="relative w-(--button-width) overflow-hidden rounded-lg rounded-t-none border-2 border-ink-base/15 bg-canvas text-left text-ink-base/80 before:absolute before:top-0 before:right-3 before:left-3 before:h-[1.5px] before:bg-ink-base/15 focus:outline-none data-open:border-t-0 data-open:border-brand-primary/70"
+          anchor="bottom start"
+          className="relative w-(--button-width) overflow-hidden rounded-lg rounded-t-none border-2 border-ink-base/15 bg-canvas text-left text-ink-base/80 before:absolute before:top-0 before:right-3 before:left-3 before:h-[1.5px] before:bg-ink-base/15 focus:outline-none data-open:border-t-0 data-open:border-brand-primary/70 data-open:shadow-lg"
         >
           {subjects.map((subject) => (
             <ListboxOption
