@@ -18,7 +18,7 @@ function FormSelectField() {
   const [selectedSubject, setSelectedSubject] = useState(null);
 
   return (
-    <Field class="flex flex-col gap-1">
+    <Field className="flex flex-col gap-1">
       <Label className="text-ink-base/80" passive>
         How can we help you?{" "}
         <span className="text-xs uppercase italic">(Required)</span>
