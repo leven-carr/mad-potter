@@ -3,6 +3,7 @@ import FormInputField from "./FormInputField";
 import FormSelectField from "./FormSelectField";
 import FormMessageField from "./FormMessageField";
 import FormBtn from "./FormBtn";
+import FormSuccessModal from "./FormSuccessModal";
 
 function ContactForm() {
   // Form state - holds the form data
@@ -23,6 +24,9 @@ function ContactForm() {
     subject: "",
     message: "",
   });
+
+  // Modal state - tracks whether success modal is open
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Encode form data into Netlify-readable URL format
   const encode = (data) => {
@@ -99,87 +103,117 @@ function ContactForm() {
 
     if (formState["bot-field"]) return;
 
+    // --- LOCAL TEST MOCK ---
+    console.log("Mocking successful submission locally!");
+    setIsModalOpen(true);
+    setFormState({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+      "bot-field": "",
+    });
+    return;
+
     // Submit to Netlify
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formState }),
-    })
-      .then(() => alert("Success! Your message was sent."))
-      .catch((error) => alert("Form submission failed: " + error));
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: encode({ "form-name": "contact", ...formState }),
+    // })
+    //   .then(() => {
+    //     setIsModalOpen(true);
+    //     setFormState({
+    //       name: "",
+    //       email: "",
+    //       phone: "",
+    //       subject: "",
+    //       message: "",
+    //       "bot-field": "",
+    //     });
+    //   })
+    //   .catch((error) => alert("Form submission failed: " + error));
   };
 
   return (
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
-      noValidate
-      className="flex w-full max-w-xl flex-col gap-4 rounded-2xl border-2 border-ink-base/15 bg-canvas-light p-6"
-    >
-      {/* Netlify ID field */}
-      <input type="hidden" name="form-name" value="contact" />
+    <>
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+        noValidate
+        className="flex w-full max-w-xl flex-col gap-4 rounded-2xl border-2 border-ink-base/15 bg-canvas-light p-6"
+      >
+        {/* Netlify ID field */}
+        <input type="hidden" name="form-name" value="contact" />
 
-      {/* Honeypot spam field */}
-      <p style={{ display: "none" }}>
-        <label>
-          Don’t fill this out if you're human:
-          <input
-            name="bot-field"
-            value={formState["bot-field"]}
-            onChange={handleChange}
-          />
-        </label>
-      </p>
+        {/* Honeypot spam field */}
+        <p style={{ display: "none" }}>
+          <label>
+            Don’t fill this out if you're human:
+            <input
+              name="bot-field"
+              value={formState["bot-field"]}
+              onChange={handleChange}
+            />
+          </label>
+        </p>
 
-      <FormInputField
-        label="Name"
-        name="name"
-        placeholder="Your name"
-        value={formState.name}
-        onChange={handleChange}
-        errorMsg={errors.name}
+        <FormInputField
+          label="Name"
+          name="name"
+          placeholder="Your name"
+          value={formState.name}
+          onChange={handleChange}
+          errorMsg={errors.name}
+        />
+
+        <FormInputField
+          label="Phone"
+          name="phone"
+          type="tel"
+          placeholder="Your phone number"
+          value={formState.phone}
+          onChange={handleChange}
+          errorMsg={errors.phone}
+        />
+
+        <FormInputField
+          label="Email"
+          name="email"
+          type="email"
+          placeholder="Your email address"
+          value={formState.email}
+          onChange={handleChange}
+          errorMsg={errors.email}
+        />
+
+        <FormSelectField
+          value={formState.subject}
+          errorMsg={errors.subject}
+          onChange={(val) => {
+            setFormState({ ...formState, subject: val });
+            if (errors.subject) setErrors({ ...errors, subject: "" });
+          }}
+        />
+
+        <FormMessageField
+          value={formState.message}
+          onChange={handleChange}
+          errorMsg={errors.message}
+        />
+
+        <FormBtn type="submit">Send Message</FormBtn>
+      </form>
+
+      <FormSuccessModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
       />
-
-      <FormInputField
-        label="Phone"
-        name="phone"
-        type="tel"
-        placeholder="Your phone number"
-        value={formState.phone}
-        onChange={handleChange}
-        errorMsg={errors.phone}
-      />
-
-      <FormInputField
-        label="Email"
-        name="email"
-        type="email"
-        placeholder="Your email address"
-        value={formState.email}
-        onChange={handleChange}
-        errorMsg={errors.email}
-      />
-
-      <FormSelectField
-        value={formState.subject}
-        errorMsg={errors.subject}
-        onChange={(val) => {
-          setFormState({ ...formState, subject: val });
-          if (errors.subject) setErrors({ ...errors, subject: "" });
-        }}
-      />
-
-      <FormMessageField
-        value={formState.message}
-        onChange={handleChange}
-        errorMsg={errors.message}
-      />
-
-      <FormBtn type="submit">Send Message</FormBtn>
-    </form>
+    </>
   );
 }
 
