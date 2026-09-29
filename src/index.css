@@ -45,6 +45,7 @@
   --color-clay-tan-150: #ecbdae;
   --color-clay-tan-200: #e7b1a3;
 
+  --color-paper-white-50: #fefcfc;
   --color-alabaster-white-50: #fcf8f9;
 
   --color-velvet-black-600: #433344;
@@ -56,6 +57,7 @@
   --color-brand-accent: var(--color-raspberry-400);
 
   --color-canvas: var(--color-alabaster-white-50);
+  --color-canvas-light: var(--color-paper-white-50);
   --color-ink-base: var(--color-velvet-black-600);
   --color-ink-deep: var(--color-velvet-black-700);
 
