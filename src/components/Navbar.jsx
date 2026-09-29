@@ -31,7 +31,7 @@ function Navbar() {
       >
         <Link
           to="/"
-          end
+          end="true"
           className="flex items-center interactive rounded-sm px-1.5 py-2.5"
         >
           <img
