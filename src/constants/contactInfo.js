@@ -1,21 +1,14 @@
 import { businessInfo } from "../constants/businessInfo";
 
-const {
-  legalName,
-  geo,
-  displayAddress,
-  srAddress,
-  telephone,
-  displayTelephone,
-  email,
-} = businessInfo;
+const { legalName, geo, address, telephone, displayTelephone, email } =
+  businessInfo;
 
-export const contactInfo = [
+export const CONTACT_INFO = [
   {
     id: "address",
     title: "Visit Us",
-    value: displayAddress,
-    srValue: srAddress,
+    value: address.displayAddress,
+    srValue: address.srAddress,
     link: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(legalName)}&query_place_id=${geo.googlePlaceId}`,
     iconName: "mapPin",
   },
