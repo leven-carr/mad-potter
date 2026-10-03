@@ -6,7 +6,7 @@ import paintsImg from "../assets/images/paints.jpg";
 function HowItWorks() {
   return (
     <section className="w-full">
-      <div className="how-it-works-grid mx-auto max-w-7xl px-6 py-8 pt-16 lg:px-10 lg:py-12 lg:pt-24">
+      <div className="how-it-works-grid mx-auto max-w-7xl px-6 py-8 lg:px-10 lg:py-12">
         {/* Title Card */}
         <article className="hiw-title flex w-full max-w-xl flex-col justify-center gap-6 rounded-2xl bg-canvas/70 p-6 backdrop-blur-xs">
           <h2 className="text-center font-display text-3xl lg:text-4xl">
