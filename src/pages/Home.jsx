@@ -6,7 +6,7 @@ function Home() {
   return (
     <div>
       <Hero />
-      <div className="w-full bg-confetti bg-cover bg-fixed bg-center">
+      <div className="w-full bg-confetti bg-cover bg-fixed bg-center pt-8 pb-24 lg:pt-12 lg:pb-28">
         <HowItWorks />
         <CTA />
       </div>
