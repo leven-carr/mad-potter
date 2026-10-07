@@ -1,34 +1,28 @@
-import { CustomQuestionBadge } from "./icons";
 import FAQCard from "./FAQCard";
 import { FAQ_DATA } from "../constants/faqs";
-import paintsImg from "../assets/images/paints.jpg";
+import HorizontalRule from "./HorizontalRule";
 
 function HowItWorks() {
   return (
     <section className="w-full">
-      <div className="how-it-works-grid mx-auto max-w-7xl px-6 py-8 lg:px-10 lg:py-12">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-8 lg:px-10 lg:py-12">
         {/* Title Card */}
-        <article className="hiw-title flex w-full max-w-xl flex-col justify-center gap-6 rounded-2xl bg-canvas/70 p-6 backdrop-blur-xs">
+        <div className="flex w-full max-w-xl flex-col justify-center gap-6 rounded-2xl bg-canvas/40 py-6 backdrop-blur-sm xs:p-6">
           <h2 className="text-center font-display text-3xl lg:text-4xl">
             How It Works
           </h2>
-          <CustomQuestionBadge className="size-16 self-center" />
+          <HorizontalRule className="max-w-xs self-center fill-brand-primary/70" />
           <span className="text-center text-2xl font-medium">
             Choose your piece, take a seat, and start painting!
           </span>
-        </article>
+        </div>
 
-        <div className="hiw-faqs flex w-full flex-col items-center justify-center gap-6">
+        {/* FAQ Cards */}
+        <div className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:items-start lg:px-6">
           {FAQ_DATA.map((faq) => {
             return <FAQCard key={faq.id} data={faq} />;
           })}
         </div>
-
-        <img
-          src={paintsImg}
-          alt=""
-          className="hiw-img w-full max-w-md rounded-2xl md:max-w-xl"
-        />
       </div>
     </section>
   );
