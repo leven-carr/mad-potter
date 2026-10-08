@@ -1,6 +1,7 @@
 // check legal vs short name, add logoUrl
 // 39.342538418971984, -84.33469236499846
 
+// SOURCE OF TRUTH
 export const businessInfo = {
   legalName: "Mad Potter",
   shortName: "Mad Potter",
@@ -57,3 +58,34 @@ export const businessInfo = {
     },
   ],
 };
+
+// CONFIGURATION FOR MAPPING TO COMPONENTS
+const { legalName, geo, address, telephone, displayTelephone, email } =
+  businessInfo;
+
+export const CONTACT_CONFIG = [
+  {
+    id: "address",
+    title: "Visit Us",
+    value: address.displayAddress,
+    srValue: address.srAddress,
+    link: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(legalName)}&query_place_id=${geo.googlePlaceId}`,
+    iconName: "mapPin",
+  },
+
+  {
+    id: "phone",
+    title: "Call Us",
+    value: displayTelephone,
+    link: `tel:${telephone}`,
+    iconName: "phone",
+  },
+
+  {
+    id: "email",
+    title: "Email Us",
+    value: email,
+    link: `mailto:${email}`,
+    iconName: "email",
+  },
+];
