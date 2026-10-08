@@ -145,7 +145,7 @@ function ContactForm() {
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
         noValidate
-        className="flex w-full max-w-xl flex-col gap-4 rounded-2xl border-2 border-ink-base/15 bg-canvas-light p-6"
+        className="flex w-full max-w-xl flex-col gap-4 rounded-2xl border-2 border-ink-base/15 bg-canvas-light p-6 shadow-lg"
       >
         {/* Netlify ID field */}
         <input type="hidden" name="form-name" value="contact" />
