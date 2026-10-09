@@ -11,7 +11,7 @@ function MobileMenu({ isOpen, onClose, links }) {
     <Dialog open={isOpen} onClose={onClose} className="relative md:hidden">
       <DialogBackdrop
         transition
-        className="fixed inset-0 bg-ink-deep/30 backdrop-blur-xs transition-opacity duration-500 data-closed:opacity-0"
+        className="fixed inset-0 bg-ink-deep/30 backdrop-blur-xs transition-opacity duration-450 data-closed:opacity-0"
       />
 
       <div className="fixed inset-0">
