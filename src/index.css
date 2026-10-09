@@ -167,107 +167,59 @@
   }
 }
 
-@utility how-it-works-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 2rem;
-  justify-items: center;
-  align-items: start;
+/* GRIDS */
+@layer components {
+  /* FOOTER GRID */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: calc(var(--spacing) * 4);
+    justify-items: center;
+    align-items: center;
 
-  & > * {
-    grid-area: auto;
-  }
+    @variant md {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas:
+        "contact links"
+        "rule-left rule-right"
+        "hours socials"
+        "logo logo"
+        "notice notice";
 
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: auto 1fr;
-
-    & .hiw-title {
-      grid-column: 1;
-      grid-row: 1;
+      & .footer-contact {
+        grid-area: contact;
+      }
+      & .footer-links {
+        grid-area: links;
+      }
+      & .footer-rule-left {
+        grid-area: rule-left;
+      }
+      & .footer-rule-right {
+        grid-area: rule-right;
+      }
+      & .footer-hours {
+        grid-area: hours;
+      }
+      & .footer-socials {
+        grid-area: socials;
+      }
+      & .footer-logo {
+        grid-area: logo;
+      }
+      & .footer-notice {
+        grid-area: notice;
+      }
     }
 
-    & .hiw-img {
-      grid-column: 1;
-      grid-row: 2;
+    @variant lg {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-areas:
+        "contact logo links"
+        "rule-left logo rule-right"
+        "hours logo socials"
+        "notice notice notice";
     }
-
-    & .hiw-faqs {
-      grid-column: 2;
-      grid-row: 1 / span 2;
-    }
-  }
-}
-
-@utility cta-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 2rem;
-  justify-items: center;
-  align-items: center;
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@utility footer-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1rem;
-  justify-items: center;
-  align-items: center;
-
-  & > * {
-    grid-area: auto;
-  }
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas:
-      "contact links"
-      "rule-left rule-right"
-      "hours socials"
-      "logo logo"
-      "notice notice";
-
-    & .footer-contact {
-      grid-area: contact;
-    }
-
-    & .footer-rule-left {
-      grid-area: rule-left;
-    }
-
-    & .footer-hours {
-      grid-area: hours;
-    }
-
-    & .footer-links {
-      grid-area: links;
-    }
-
-    & .footer-rule-right {
-      grid-area: rule-right;
-    }
-
-    & .footer-logo {
-      grid-area: logo;
-    }
-
-    & .footer-notice {
-      grid-area: notice;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-areas:
-      "contact logo links"
-      "rule-left logo rule-right"
-      "hours logo socials"
-      "notice notice notice";
-  }
   }
 }
 
