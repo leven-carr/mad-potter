@@ -1,6 +1,6 @@
 import ContactForm from "./ContactForm";
-import ContactAction from "./ContactAction";
-import ContactHours from "./ContactHours";
+import ConnectTab from "./ConnectTab";
+import HoursTab from "./HoursTab";
 import { CONTACT_CONFIG } from "../constants/businessInfo";
 
 function VisitUs() {
@@ -24,14 +24,12 @@ function VisitUs() {
           <ContactForm />
         </div>
 
-        {/* Contact Actions and Hours */}
+        {/* Connect and Hours */}
         <div className="flex max-w-xl flex-col gap-8 py-6">
           {CONTACT_CONFIG.map((contactMethod) => {
-            return (
-              <ContactAction key={contactMethod.id} data={contactMethod} />
-            );
+            return <ConnectTab key={contactMethod.id} data={contactMethod} />;
           })}
-          <ContactHours />
+          <HoursTab />
         </div>
       </div>
     </section>

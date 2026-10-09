@@ -13,7 +13,7 @@ function ContactTabLayout({
       {...props}
     >
       <div className="flex items-center justify-center self-start rounded-full bg-brand-accent p-4 shadow-xl transition-[background-color,scale] duration-300 group-hover:scale-105 group-hover:bg-brand-hover group-focus-visible:outline-3 group-focus-visible:outline-offset-3 group-focus-visible:outline-brand-primary/70">
-        <Icon className="size-8 text-canvas" />
+        <Icon aria-hidden="true" className="size-8 text-canvas" />
       </div>
 
       <div className="flex flex-col items-start">

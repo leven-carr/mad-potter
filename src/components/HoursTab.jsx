@@ -3,7 +3,7 @@ import { businessInfo } from "../constants/businessInfo";
 import ContactTabLayout from "./ContactTabLayout";
 import HoursRow from "./HoursRow";
 
-function ContactHours() {
+function HoursTab() {
   const { hours } = businessInfo;
 
   return (
@@ -17,4 +17,4 @@ function ContactHours() {
   );
 }
 
-export default ContactHours;
+export default HoursTab;
