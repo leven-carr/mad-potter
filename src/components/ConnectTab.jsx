@@ -3,12 +3,19 @@ import ContactTabLayout from "./ContactTabLayout";
 
 function ConnectTab({ data }) {
   const { id, title, value, srValue, link, iconName } = data;
-
   const Icon = ICON_MAP[iconName];
+  const opensNewTab = id === "address";
 
   return (
     <address className="contents not-italic">
-      <ContactTabLayout as="a" href={link} icon={Icon} title={title}>
+      <ContactTabLayout
+        as="a"
+        href={link}
+        target={opensNewTab ? "_blank" : undefined}
+        rel={opensNewTab ? "noopener noreferrer" : undefined}
+        icon={Icon}
+        title={title}
+      >
         {id === "email" ? (
           <>
             {value.split("@")[0]}
