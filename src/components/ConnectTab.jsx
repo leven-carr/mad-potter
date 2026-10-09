@@ -1,7 +1,7 @@
 import { ICON_MAP } from "../constants/iconMap";
 import ContactTabLayout from "./ContactTabLayout";
 
-function ContactAction({ data }) {
+function ConnectTab({ data }) {
   const { id, title, value, srValue, link, iconName } = data;
 
   const Icon = ICON_MAP[iconName];
@@ -26,4 +26,4 @@ function ContactAction({ data }) {
   );
 }
 
-export default ContactAction;
+export default ConnectTab;

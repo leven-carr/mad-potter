@@ -1,68 +1,43 @@
-import { FaMapPin, FaFacebook, FaInstagram } from "react-icons/fa6";
-import { CustomTbPhone, CustomLuMail } from "./icons";
+import { FaFacebook, FaInstagram } from "react-icons/fa6";
+import { CONTACT_CONFIG, businessInfo } from "../constants/businessInfo";
 import { NAV_LINKS } from "../constants/navigation";
-import NavLinkItem from "./NavLinkItem";
 import ShapeDivider from "./ShapeDivider";
 import HorizontalRule from "./HorizontalRule";
+import ConnectRow from "./ConnectRow";
+import HoursRow from "./HoursRow";
+import NavLinkItem from "./NavLinkItem";
 import logoSubmark from "../assets/images/logo-submark.svg";
 
 function Footer() {
+  const { hours } = businessInfo;
   return (
     <>
       <footer className="relative w-full bg-brand-primary text-brand-secondary">
         <ShapeDivider />
-        <div className="mx-auto footer-grid max-w-7xl px-6 py-8">
+        <div className="footer-grid mx-auto max-w-7xl px-6 py-8">
           <section className="footer-contact flex flex-col">
             <h2 className="text-center text-lg leading-loose font-semibold">
               Contact Us
             </h2>
-            <div className="flex flex-row items-center justify-start gap-2">
-              <FaMapPin className="text-xl" />
-              <address className="contents not-italic">
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=mad+potter&query_place_id=ChIJPbeUr11XQIgRST__1RTQno4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="interactive p-2"
-                >
-                  6680 Tri Way Dr, Mason, OH 45040
-                </a>
-              </address>
-            </div>
-            <div className="flex flex-row items-center justify-start gap-2">
-              <CustomTbPhone className="text-xl" />
-              <a href="tel:+15137705585" className="interactive p-2">
-                513-770-5585
-              </a>
-            </div>
-            <div className="flex flex-row items-center justify-start gap-2">
-              <CustomLuMail className="text-xl" />
-              <a
-                href="mailto:madpottermason@yahoo.com"
-                className="interactive p-2"
-              >
-                madpottermason@yahoo.com
-              </a>
+            <div className="flex flex-col">
+              {CONTACT_CONFIG.map((contactMethod) => {
+                return (
+                  <ConnectRow key={contactMethod.id} data={contactMethod} />
+                );
+              })}
             </div>
           </section>
 
           <HorizontalRule className="footer-rule-left w-60 fill-brand-secondary" />
 
-          <section className="footer-hours flex flex-col">
+          <section className="footer-hours mb-2 flex flex-col gap-2">
             <h2 className="text-center text-lg leading-loose font-semibold">
               Hours
             </h2>
-            <div className="flex gap-4 p-2">
-              <span className="font-semibold">Sun: </span>
-              <span>1 – 6 PM</span>
-            </div>
-            <div className="flex gap-4 p-2">
-              <span className="font-semibold">Mon – Fri: </span>
-              <span>11 AM – 9 PM</span>
-            </div>
-            <div className="flex gap-4 p-2">
-              <span className="font-semibold">Sat: </span>
-              <span>10 AM – 9 PM</span>
+            <div className="flex flex-col gap-4">
+              {hours.map((days, index) => {
+                return <HoursRow key={index} data={days} />;
+              })}
             </div>
           </section>
 
@@ -72,17 +47,17 @@ function Footer() {
             <h2 className="text-center text-lg leading-loose font-semibold">
               Links
             </h2>
-            <nav className="flex flex-wrap items-center justify-center gap-2">
+            <nav className="flex flex-wrap items-center justify-center gap-2 gap-y-0">
               <NavLinkItem
                 link={{ to: "/", label: "Home" }}
-                className="interactive p-2"
+                className="rounded-lg p-2 transition-[color] duration-300 hover:text-brand-hover focus-visible:outline-2 focus-visible:outline-brand-secondary"
               />
 
               {NAV_LINKS.map((item) => (
                 <NavLinkItem
                   key={item.to}
                   link={item}
-                  className="interactive p-2"
+                  className="rounded-lg p-2 transition-[color] duration-300 hover:text-brand-hover focus-visible:outline-2 focus-visible:outline-brand-secondary"
                 />
               ))}
             </nav>
@@ -90,17 +65,17 @@ function Footer() {
 
           <HorizontalRule className="footer-rule-right w-60 fill-brand-secondary" />
 
-          <section className="footer-socials flex flex-col">
+          <section className="footer-socials flex flex-col gap-2">
             <h2 className="text-center text-lg leading-loose font-semibold">
               Social Media
             </h2>
-            <div className="mt-1 flex justify-center gap-6 text-4xl">
+            <div className="flex justify-center gap-6 text-4xl">
               <a
                 href="https://www.facebook.com/madpotterstudiomason/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit us on Facebook"
-                className="interactive p-2"
+                className="rounded-full p-2 transition-[color] duration-300 hover:text-brand-hover focus-visible:outline-2 focus-visible:outline-brand-secondary"
               >
                 <FaFacebook />
               </a>
@@ -109,7 +84,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit us on Instagram"
-                className="interactive p-2"
+                className="rounded-full p-2 transition-[color] duration-300 hover:text-brand-hover focus-visible:outline-2 focus-visible:outline-brand-secondary"
               >
                 <FaInstagram />
               </a>

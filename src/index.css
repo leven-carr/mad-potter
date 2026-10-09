@@ -156,15 +156,6 @@
       outline: 2px solid var(--color-brand-primary);
     }
   }
-
-  /* Footer Links */
-  footer &[aria-current="page"] {
-    color: inherit;
-
-    &:hover {
-      color: var(--color-brand-hover);
-    }
-  }
 }
 
 /* GRIDS */
@@ -173,12 +164,13 @@
   .footer-grid {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: calc(var(--spacing) * 4);
+    gap: calc(var(--spacing) * 6);
     justify-items: center;
     align-items: center;
 
     @variant md {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: calc(var(--spacing) * 4);
       grid-template-areas:
         "contact links"
         "rule-left rule-right"
@@ -200,9 +192,11 @@
       }
       & .footer-hours {
         grid-area: hours;
+        align-self: flex-start;
       }
       & .footer-socials {
         grid-area: socials;
+        align-self: flex-start;
       }
       & .footer-logo {
         grid-area: logo;
