@@ -24,16 +24,14 @@ function VisitUs() {
           <ContactForm />
         </div>
 
-        <div className="flex flex-col items-center gap-8 lg:gap-0">
-          {/* Contact Actions */}
-          <div className="flex max-w-xl flex-col gap-6 py-6">
-            {CONTACT_CONFIG.map((contactMethod) => {
-              return (
-                <ContactAction key={contactMethod.id} data={contactMethod} />
-              );
-            })}
-            <ContactHours />
-          </div>
+        {/* Contact Actions and Hours */}
+        <div className="flex max-w-xl flex-col gap-8 py-6">
+          {CONTACT_CONFIG.map((contactMethod) => {
+            return (
+              <ContactAction key={contactMethod.id} data={contactMethod} />
+            );
+          })}
+          <ContactHours />
         </div>
       </div>
     </section>

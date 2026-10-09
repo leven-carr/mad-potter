@@ -27,7 +27,7 @@ function FormSuccessModal({ isOpen, onClose }) {
               We've received your message and will get back to you as soon as we
               can!
             </p>
-            <CloseButton className="mt-2 cursor-pointer rounded-full bg-brand-accent px-6 py-2 text-lg text-canvas hover:bg-brand-hover focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-brand-primary">
+            <CloseButton className="mt-2 cursor-pointer rounded-full bg-brand-accent px-6 py-2 text-lg text-canvas hover:bg-brand-hover focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-brand-primary/70">
               Close
             </CloseButton>
           </div>

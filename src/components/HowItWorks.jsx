@@ -7,8 +7,8 @@ function HowItWorks() {
     <section className="w-full">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-8 lg:px-10 lg:py-12">
         {/* Title Card */}
-        <div className="flex w-full max-w-xl flex-col justify-center gap-6 rounded-2xl bg-canvas/40 py-6 backdrop-blur-sm xs:p-6">
-          <h2 className="text-center font-display text-3xl lg:text-4xl">
+        <div className="flex w-full max-w-xl flex-col justify-center gap-4 rounded-2xl bg-canvas/40 py-6 backdrop-blur-sm xs:p-6">
+          <h2 className="text-center font-display text-3xl lg:text-5xl">
             How It Works
           </h2>
           <HorizontalRule className="max-w-xs self-center fill-brand-primary/70" />
