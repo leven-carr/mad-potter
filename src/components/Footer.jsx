@@ -77,7 +77,7 @@ function Footer() {
                 aria-label="Visit us on Facebook"
                 className="rounded-full p-2 transition-[color] duration-300 hover:text-brand-hover focus-visible:outline-2 focus-visible:outline-brand-secondary"
               >
-                <FaFacebook />
+                <FaFacebook aria-hidden="true" />
               </a>
               <a
                 href="https://www.instagram.com/madpottermason/"
@@ -86,7 +86,7 @@ function Footer() {
                 aria-label="Visit us on Instagram"
                 className="rounded-full p-2 transition-[color] duration-300 hover:text-brand-hover focus-visible:outline-2 focus-visible:outline-brand-secondary"
               >
-                <FaInstagram />
+                <FaInstagram aria-hidden="true" />
               </a>
             </div>
           </section>

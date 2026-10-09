@@ -79,7 +79,10 @@ function FAQCard({ data }) {
         <div
           className={`rounded-t-2xl ${bgClass} bg-size-[10rem] bg-right bg-repeat py-16`}
         >
-          <Icon className="mx-auto size-18 drop-shadow-vector-dark" />
+          <Icon
+            aria-hidden="true"
+            className="mx-auto size-18 drop-shadow-vector-dark"
+          />
         </div>
 
         {/* Bottom - button (question), panel (answers), arrow icon */}
@@ -104,7 +107,10 @@ function FAQCard({ data }) {
             </div>
           </DisclosurePanel>
 
-          <IoChevronDownCircle className="size-12 self-center fill-ink-base/35 transition duration-450 ease-in-out group-data-open:rotate-180" />
+          <IoChevronDownCircle
+            aria-hidden="true"
+            className="size-12 self-center fill-ink-base/35 transition duration-450 ease-in-out group-data-open:rotate-180"
+          />
         </div>
       </div>
     </Disclosure>
