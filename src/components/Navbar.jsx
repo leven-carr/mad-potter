@@ -32,7 +32,7 @@ function Navbar() {
         <Link
           to="/"
           end="true"
-          className="flex items-center interactive rounded-sm px-1.5 py-2.5"
+          className="flex items-center rounded-lg px-1.5 py-2.5 focus-visible:outline-2 focus-visible:outline-brand-secondary"
         >
           <img
             src={logoLight}
@@ -51,11 +51,11 @@ function Navbar() {
           type="button"
           aria-label="Toggle mobile menu"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={`flex cursor-pointer items-center justify-center interactive rounded-sm p-1.5 md:hidden ${mobileMenuOpen && "text-brand-hover"}`}
+          className={`flex cursor-pointer items-center justify-center rounded-full p-1.5 transition-[color] duration-300 hover:text-brand-hover focus-visible:outline-2 focus-visible:outline-brand-secondary md:hidden ${mobileMenuOpen && "text-brand-hover"}`}
         >
           <IoChevronBackCircle
             aria-hidden="true"
-            className={`h-8 w-8 transition-transform duration-500 ${mobileMenuOpen && "rotate-180"}`}
+            className={`h-8 w-8 transition-transform duration-450 ${mobileMenuOpen && "rotate-180"}`}
           />
         </button>
       </div>
