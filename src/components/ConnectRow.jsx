@@ -2,13 +2,15 @@ import { ICON_MAP } from "../constants/iconMap";
 
 function ConnectRow({ data }) {
   const { id, value, srValue, link, iconName } = data;
-
   const Icon = ICON_MAP[iconName];
+  const opensNewTab = id === "address";
 
   return (
     <address className="contents not-italic">
       <a
         href={link}
+        target={opensNewTab ? "_blank" : undefined}
+        rel={opensNewTab ? "noopener noreferrer" : undefined}
         className="flex w-fit max-w-full items-center gap-4 rounded-lg p-2 transition-[color] duration-300 hover:text-brand-hover focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-brand-secondary"
       >
         <Icon aria-hidden="true" className="text-xl" />
