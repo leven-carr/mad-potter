@@ -1,4 +1,5 @@
-import { Routes, Route, Navigate } from "react-router";
+import { useEffect } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -7,9 +8,21 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollToTop />
+
       <Navbar />
       <main className="grow">
         <Routes>
