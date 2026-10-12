@@ -1,14 +1,14 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import { useCarouselTween } from "../hooks/useCarouselTween";
+
+import { IoChevronBackCircle, IoChevronForwardCircle } from "react-icons/io5";
 
 import studioGirlPainting from "../assets/images/studio-girl-painting.jpg";
 import studioPitcher from "../assets/images/studio-pitcher.jpg";
 import studioColorful from "../assets/images/studio-colorful.jpg";
 import studioMug from "../assets/images/studio-mug.jpg";
 import studioKidsPainting from "../assets/images/studio-kids-painting.jpg";
-
-const TWEEN_FACTOR_BASE = 0.52;
-const clamp = (number, min, max) => Math.min(Math.max(number, min), max);
 
 function BlobCarousel() {
   const slides = [
@@ -50,106 +50,24 @@ function BlobCarousel() {
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
-
-  // A ref to easily target the root node without triggering component updates
   const containerRef = useRef(null);
-  const tweenFactor = useRef(0);
-  const tweenNodes = useRef([]);
 
-  const setTweenNodes = useCallback((emblaApi) => {
-    tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
-      return slideNode.querySelector(".embla__slide__inner");
-    });
-  }, []);
+  useCarouselTween(emblaApi, containerRef, setSelectedIndex, setScrollSnaps);
 
-  const setTweenFactor = useCallback((emblaApi) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
-  }, []);
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
 
-  const tweenScale = useCallback((emblaApi, event) => {
-    const engine = emblaApi.internalEngine();
-    const scrollProgress = emblaApi.scrollProgress();
-    const slidesInView = emblaApi.slidesInView();
-    const isScrollEvent = event?.type === "scroll";
-
-    emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-      let diffToTarget = scrollSnap - scrollProgress;
-      const slidesInSnap = engine.slideRegistry[snapIndex];
-      if (!slidesInSnap) return;
-
-      slidesInSnap.forEach((slideIndex) => {
-        if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
-
-        if (engine.options.loop) {
-          engine.slideLooper.loopPoints.forEach((loopItem) => {
-            const target = loopItem.target();
-            if (slideIndex === loopItem.index && target !== 0) {
-              const sign = Math.sign(target);
-              if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
-              if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
-            }
-          });
-        }
-
-        const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
-        const scale = clamp(tweenValue, 0.8, 1).toString();
-        const tweenNode = tweenNodes.current[slideIndex];
-        if (tweenNode) tweenNode.style.transform = `scale(${scale})`;
-      });
-    });
-  }, []);
-
-  const onSelect = useCallback((emblaApi) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, []);
-
-  // PERFORMANCE WIN: Direct DOM update of data-attribute completely sidesteps React updates
-  const updateLoopAttribute = useCallback((emblaApi) => {
-    if (!containerRef.current) return;
-    const canScroll = emblaApi.canScrollNext();
-    containerRef.current.setAttribute("data-loop-active", canScroll.toString());
-  }, []);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-
-    setScrollSnaps(emblaApi.scrollSnapList());
-    setTweenNodes(emblaApi);
-    setTweenFactor(emblaApi);
-    tweenScale(emblaApi);
-    onSelect(emblaApi);
-    updateLoopAttribute(emblaApi);
-
-    emblaApi
-      .on("reInit", setTweenNodes)
-      .on("reInit", setTweenFactor)
-      .on("reInit", tweenScale)
-      .on("reInit", onSelect)
-      .on("reInit", updateLoopAttribute)
-      .on("scroll", tweenScale)
-      .on("slideFocus", tweenScale)
-      .on("select", onSelect);
-
-    return () => {
-      emblaApi.off("scroll", tweenScale);
-      emblaApi.off("slideFocus", tweenScale);
-      emblaApi.off("select", onSelect);
-    };
-  }, [
-    emblaApi,
-    setTweenNodes,
-    setTweenFactor,
-    tweenScale,
-    onSelect,
-    updateLoopAttribute,
-  ]);
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   return (
     <div
       ref={containerRef}
-      data-loop-active="true" /* Driven natively by updateLoopAttribute */
-      className="embla-wrapper mx-auto flex h-108 max-h-108 w-full max-w-7xl flex-col justify-between py-4"
+      className="embla-wrapper relative mx-auto flex h-[clamp(300px,95vw,464px)] w-full max-w-7xl flex-col justify-between py-4"
     >
+      {/* Embla Viewport */}
       <div className="embla__viewport flex-1" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((slide) => (
@@ -178,19 +96,45 @@ function BlobCarousel() {
         </div>
       </div>
 
-      <div className="embla__dots-container mt-4 flex justify-center gap-2">
-        {scrollSnaps.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => emblaApi && emblaApi.scrollTo(index)}
-            className={`h-2.5 w-2.5 cursor-pointer rounded-full border-none transition-colors duration-200 ${
-              index === selectedIndex
-                ? "bg-brand-primary"
-                : "bg-brand-secondary"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+      <div className="mt-4 flex items-center justify-center gap-4">
+        {/* Previous Button */}
+        <button
+          onClick={scrollPrev}
+          className="flex cursor-pointer items-center justify-center rounded-full text-brand-primary/70 transition-[color] duration-300 hover:text-brand-primary focus-visible:outline-3 focus-visible:outline-brand-primary/70"
+          aria-label="Previous slide"
+        >
+          <IoChevronBackCircle aria-hidden="true" className="size-12" />
+        </button>
+
+        {/* Dot Indicators Group */}
+        <div
+          className="flex items-center justify-center gap-3"
+          role="group"
+          aria-label="Carousel slides"
+        >
+          {scrollSnaps.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => emblaApi && emblaApi.scrollTo(index)}
+              className={`size-3 cursor-pointer rounded-full border-none transition-[color] duration-300 focus-visible:outline-3 focus-visible:outline-brand-primary/70 ${
+                index === selectedIndex
+                  ? "bg-brand-primary/70"
+                  : "bg-brand-secondary"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+              aria-current={index === selectedIndex ? "true" : "false"}
+            />
+          ))}
+        </div>
+
+        {/* Next Button */}
+        <button
+          onClick={scrollNext}
+          className="flex cursor-pointer items-center justify-center rounded-full text-brand-primary/70 transition-[color] duration-300 hover:text-brand-primary focus-visible:outline-3 focus-visible:outline-brand-primary/70"
+          aria-label="Next slide"
+        >
+          <IoChevronForwardCircle aria-hidden="true" className="size-12" />
+        </button>
       </div>
     </div>
   );
