@@ -43,7 +43,13 @@ function Navbar() {
 
         <nav className="hidden items-center justify-around text-lg md:flex md:flex-1 lg:text-xl">
           {NAV_LINKS.map((item) => (
-            <NavLinkItem key={item.to} link={item} />
+            <NavLinkItem
+              key={item.to}
+              link={item}
+              className={({ isActive }) =>
+                isActive ? "text-brand-active hover:text-brand-hover" : ""
+              }
+            />
           ))}
         </nav>
 

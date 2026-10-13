@@ -122,42 +122,6 @@
   }
 }
 
-@utility interactive {
-  border-radius: var(--radius-sm);
-  transition: color 0.3s;
-
-  /* Navbar Links */
-  &:hover {
-    color: var(--color-brand-hover);
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--color-brand-secondary);
-  }
-
-  &[aria-current="page"] {
-    color: var(--color-brand-active);
-
-    &:hover {
-      color: var(--color-brand-hover);
-    }
-  }
-
-  /* Inline Links */
-  p > a& {
-    text-decoration-line: underline;
-    text-underline-offset: 2px;
-
-    &:focus-visible {
-      outline: 2px solid var(--color-brand-primary);
-    }
-  }
-}
-
 /* GRIDS */
 @layer components {
   /* FOOTER GRID */
