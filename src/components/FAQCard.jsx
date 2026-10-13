@@ -59,7 +59,7 @@ function FAQCard({ data }) {
       <NavLinkItem
         key={i}
         link={link}
-        className="interactive text-brand-primary"
+        className="rounded-sm p-0 text-brand-primary/85 underline underline-offset-2 hover:text-brand-hover focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary/85"
       />
     ));
   }

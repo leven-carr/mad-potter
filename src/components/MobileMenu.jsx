@@ -22,7 +22,15 @@ function MobileMenu({ isOpen, onClose, links }) {
           className="fixed top-15 right-0 bottom-0 -mt-0.5 flex w-full max-w-56 flex-col items-center gap-6 bg-brand-primary px-10 py-6 text-center text-lg text-brand-secondary transition duration-450 data-closed:translate-x-full"
         >
           {links.map((item) => (
-            <CloseButton key={item.to} as={NavLinkItem} link={item} />
+            <NavLinkItem
+              key={item.to}
+              link={item}
+
+              onClick={onClose}
+              className={({ isActive }) =>
+                isActive ? "text-brand-active hover:text-brand-hover" : ""
+              }
+            />
           ))}
         </DialogPanel>
       </div>

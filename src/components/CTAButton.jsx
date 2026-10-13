@@ -4,7 +4,7 @@ function CTAButton() {
   return (
     <NavLinkItem
       link={{ to: "/contact-us", label: "Plan Your Visit" }}
-      className="group relative cursor-pointer rounded-full bg-brand-accent px-10 py-6 text-2xl font-medium tracking-wide text-canvas shadow-lg focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-brand-primary/70"
+      className="group relative cursor-pointer rounded-full bg-brand-accent px-10 py-6 text-2xl font-medium tracking-wide text-canvas shadow-lg hover:text-canvas focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-brand-primary/70"
     >
       <svg
         width="331"
