@@ -1,2 +1,2 @@
 export * from "./CustomIcons";
-export * from "./IllustrationIcons";
+export * from "./AnimatedIcons";
