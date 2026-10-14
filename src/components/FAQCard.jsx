@@ -73,15 +73,13 @@ function FAQCard({ data }) {
           if (e.currentTarget.dataset.isDragging === "true") return;
           handleCardClick(e);
         }}
-        className="flex w-full max-w-sm cursor-pointer flex-col rounded-2xl border-3 border-ink-base/15 bg-canvas-light shadow-lg transition-transform duration-300 ease-in-out hover:scale-103 has-focus-visible:border-brand-primary/70"
+        className="flex w-full max-w-sm cursor-pointer flex-col overflow-hidden rounded-2xl border-3 border-ink-base/15 bg-canvas-light shadow-lg transition-transform duration-300 ease-in-out hover:scale-103 has-focus-visible:border-brand-primary/70"
       >
         {/* Top - icon graphics */}
-        <div
-          className={`rounded-t-2xl ${bgClass} bg-size-[10rem] bg-right bg-repeat py-16`}
-        >
+        <div className={` ${bgClass} bg-size-[10rem] bg-right bg-repeat py-16`}>
           <Icon
             aria-hidden="true"
-            className="mx-auto size-18 drop-shadow-vector-dark"
+            className="mx-auto size-20 drop-shadow-vector-dark"
           />
         </div>
 
