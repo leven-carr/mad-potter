@@ -17,7 +17,7 @@ export function CustomOpenDoor(props) {
     <svg ref={ref} viewBox="0 0 24 24" fill="none" {...props}>
       <motion.path
         animate={{ d: isOpen ? DOOR_PATHS.open : DOOR_PATHS.closed }}
-        transition={{ type: "spring", stiffness: 280, damping: 24 }}
+        transition={{ type: "spring", stiffness: 260, damping: 20, mass: 0.8 }}
         className="fill-purple-300 stroke-purple-700"
       />
     </svg>
