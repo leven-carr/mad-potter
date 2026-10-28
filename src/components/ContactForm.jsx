@@ -104,36 +104,36 @@ function ContactForm() {
     if (formState["bot-field"]) return;
 
     // --- LOCAL TEST MOCK ---
-    console.log("Mocking successful submission locally!");
-    setIsModalOpen(true);
-    setFormState({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-      "bot-field": "",
-    });
-    return;
+    // console.log("Mocking successful submission locally!");
+    // setIsModalOpen(true);
+    // setFormState({
+    //   name: "",
+    //   email: "",
+    //   phone: "",
+    //   subject: "",
+    //   message: "",
+    //   "bot-field": "",
+    // });
+    // return;
 
     // Submit to Netlify
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: encode({ "form-name": "contact", ...formState }),
-    // })
-    //   .then(() => {
-    //     setIsModalOpen(true);
-    //     setFormState({
-    //       name: "",
-    //       email: "",
-    //       phone: "",
-    //       subject: "",
-    //       message: "",
-    //       "bot-field": "",
-    //     });
-    //   })
-    //   .catch((error) => alert("Form submission failed: " + error));
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formState }),
+    })
+      .then(() => {
+        setIsModalOpen(true);
+        setFormState({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+          "bot-field": "",
+        });
+      })
+      .catch((error) => alert("Form submission failed: " + error));
   };
 
   return (
