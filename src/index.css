@@ -73,6 +73,7 @@
     ),
     url("./assets/images/hero.jpg");
 
+  --background-image-swirls: url("./assets/images/swirls-bg.svg");
   --background-image-confetti: url("./assets/images/confetti-bg.svg");
   --background-image-contact: url("./assets/images/contact-bg.svg");
 
