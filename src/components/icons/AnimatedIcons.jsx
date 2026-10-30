@@ -29,7 +29,7 @@ export function CustomPiggyBank(props) {
   const ref = useRef(null);
   const isOpen = useGroupDisclosure(ref);
 
-  const wobbleKeyframes = [0, -6, 6, -3, 2, 0];
+  const wobbleKeyframes = [0, -5, 5, -3, 2, 0];
   const wobbleTransition = {
     duration: 0.5,
     ease: "easeOut",
@@ -59,10 +59,10 @@ export function CustomPiggyBank(props) {
       <motion.path
         d="M12.625 4.5C10.8308 4.5 9.375 5.95583 9.375 7.75C9.375 9.54417 10.8308 11 12.625 11C14.4192 11 15.875 9.54417 15.875 7.75C15.875 5.95583 14.4192 4.5 12.625 4.5Z"
         className="fill-clay-tan-100 stroke-clay-tan-150"
-        animate={{ y: isOpen ? -5 : 0.5 }}
+        animate={{ y: isOpen ? -5 : 1 }}
         transition={{
           type: "spring",
-          stiffness: 330,
+          stiffness: 360,
           damping: 15,
         }}
       />
