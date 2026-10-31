@@ -7,7 +7,7 @@ function HowItWorks() {
     <section className="w-full">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-8 lg:px-10 lg:py-12">
         {/* Title Card */}
-        <div className="flex w-full max-w-xl flex-col justify-center gap-4 rounded-2xl bg-canvas/40 py-6 backdrop-blur-sm xs:p-6">
+        <div className="flex w-full max-w-xl flex-col gap-4 py-6 xs:p-6">
           <h2 className="text-center font-display text-3xl lg:text-5xl">
             How It Works
           </h2>
@@ -18,7 +18,7 @@ function HowItWorks() {
         </div>
 
         {/* FAQ Cards */}
-        <div className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:items-start lg:px-6">
+        <div className="flex flex-col items-center justify-between gap-8 lg:flex-row lg:items-start lg:px-6">
           {FAQ_DATA.map((faq) => {
             return <FAQCard key={faq.id} data={faq} />;
           })}
