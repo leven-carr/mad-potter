@@ -1,3 +1,4 @@
+import PageHeading from "./PageHeading";
 import ContactForm from "./ContactForm";
 import ConnectTab from "./ConnectTab";
 import HoursTab from "./HoursTab";
@@ -9,10 +10,8 @@ function VisitUs() {
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-6 py-8 lg:flex-row lg:justify-around lg:px-10 lg:py-12">
         <div className="flex flex-col gap-8">
           {/* Title Card */}
-          <div className="flex w-full max-w-xl flex-col justify-center gap-6">
-            <h2 className="text-left font-display text-3xl lg:text-5xl">
-              Visit Us Today!
-            </h2>
+          <div className="flex w-full max-w-xl flex-col gap-4">
+            <PageHeading className="text-left">Visit Us Today!</PageHeading>
             <p className="text-lg">
               Planning ahead? Feel free to get in touch with us via phone or
               email, or use our contact form and we'll get back to you as soon

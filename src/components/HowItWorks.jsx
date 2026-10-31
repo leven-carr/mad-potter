@@ -1,3 +1,5 @@
+import SectionHeading from "./SectionHeading";
+import Subheading from "./Subheading";
 import FAQCard from "./FAQCard";
 import { FAQ_DATA } from "../constants/faqs";
 import HorizontalRule from "./HorizontalRule";
@@ -7,14 +9,12 @@ function HowItWorks() {
     <section className="w-full">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-8 lg:px-10 lg:py-12">
         {/* Title Card */}
-        <div className="flex w-full max-w-xl flex-col gap-4 py-6 xs:p-6">
-          <h2 className="text-center font-display text-3xl lg:text-5xl">
-            How It Works
-          </h2>
+        <div className="flex w-full max-w-xl flex-col items-center gap-4 py-6 xs:p-6">
+          <SectionHeading>How It Works</SectionHeading>
           <HorizontalRule className="max-w-xs self-center fill-brand-primary/70" />
-          <span className="text-center text-2xl font-medium">
+          <Subheading>
             Choose your piece, take a seat, and start painting!
-          </span>
+          </Subheading>
         </div>
 
         {/* FAQ Cards */}
