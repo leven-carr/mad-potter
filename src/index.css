@@ -85,8 +85,6 @@
 
   /* Transitions/Animations */
   --ease-bounce: cubic-bezier(0.34, 1.8, 0.64, 1);
-  --animate-bunny-hop: hop 0.6s ease-in-out forwards;
-  --animate-bunny-blink: blink 1.2s ease-in-out forwards;
 }
 
 @layer base {
@@ -94,32 +92,6 @@
     background-color: var(--color-canvas);
     color: var(--color-ink-base);
     letter-spacing: var(--tracking-wide);
-  }
-}
-
-@keyframes hop {
-  0% {
-    transform: translateY(23px);
-  }
-  55% {
-    transform: translateY(-0.5px);
-  }
-  75% {
-    transform: translateY(0.5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes blink {
-  0%,
-  90%,
-  100% {
-    transform: scaleY(1);
-  }
-  95% {
-    transform: scaleY(0.1);
   }
 }
 
