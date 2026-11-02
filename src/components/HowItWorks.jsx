@@ -1,3 +1,4 @@
+import LayoutWrapper from "./LayoutWrapper";
 import SectionHeading from "./SectionHeading";
 import Subheading from "./Subheading";
 import FAQCard from "./FAQCard";
@@ -7,7 +8,7 @@ import HorizontalRule from "./HorizontalRule";
 function HowItWorks() {
   return (
     <section className="w-full">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-8 lg:px-10 lg:py-12">
+      <LayoutWrapper className="mb-6">
         {/* Title Card */}
         <div className="flex w-full max-w-xl flex-col items-center gap-4 py-6 xs:p-6">
           <SectionHeading>How It Works</SectionHeading>
@@ -23,7 +24,7 @@ function HowItWorks() {
             return <FAQCard key={faq.id} data={faq} />;
           })}
         </div>
-      </div>
+      </LayoutWrapper>
     </section>
   );
 }
