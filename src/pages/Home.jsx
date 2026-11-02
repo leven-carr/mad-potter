@@ -1,3 +1,4 @@
+import PageWrapper from "../components/PageWrapper";
 import Hero from "../components/Hero";
 import Welcome from "../components/Welcome";
 import HowItWorks from "../components/HowItWorks";
@@ -7,11 +8,11 @@ function Home() {
   return (
     <div>
       <Hero />
-      <div className="w-full bg-swirls bg-cover bg-fixed bg-left pt-4 pb-28 lg:pt-8 lg:pb-32">
+      <PageWrapper className="bg-swirls bg-cover bg-fixed">
         <Welcome />
         <HowItWorks />
         <CTA />
-      </div>
+      </PageWrapper>
     </div>
   );
 }
