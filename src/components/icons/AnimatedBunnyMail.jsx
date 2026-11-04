@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-function BunnyMail({ className }) {
+function AnimatedBunnyMail({ className }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -82,4 +82,4 @@ function BunnyMail({ className }) {
   );
 }
 
-export default BunnyMail;
+export default AnimatedBunnyMail;

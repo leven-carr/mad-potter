@@ -5,7 +5,7 @@ import {
   DialogTitle,
   CloseButton,
 } from "@headlessui/react";
-import BunnyMail from "./BunnyMail";
+import { AnimatedBunnyMail } from "@/components/icons";
 
 function FormSuccessModal({ isOpen, onClose }) {
   return (
@@ -17,7 +17,7 @@ function FormSuccessModal({ isOpen, onClose }) {
       <div className="fixed inset-0 flex items-center justify-center p-6">
         <DialogPanel className="flex w-full max-w-md flex-col overflow-hidden rounded-xl">
           <div className="flex items-center justify-center bg-brand-primary p-6 text-brand-secondary">
-            <BunnyMail className="size-32" />
+            <AnimatedBunnyMail className="size-32" />
           </div>
           <div className="flex flex-col items-center gap-5 bg-canvas p-10">
             <DialogTitle className="lg:4xl font-display text-3xl">
