@@ -1,6 +1,6 @@
-import PageWrapper from "../components/PageWrapper";
-import VisitUs from "../components/VisitUs";
-import BlobCarousel from "../components/BlobCarousel";
+import PageWrapper from "../components/ui/PageWrapper";
+import VisitUs from "../components/features/contact/VisitUs";
+import BlobCarousel from "../components/features/contact/BlobCarousel";
 
 function Contact() {
   return (

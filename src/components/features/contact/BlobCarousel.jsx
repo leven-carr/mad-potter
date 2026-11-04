@@ -1,14 +1,14 @@
 import { useState, useRef, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCarouselTween } from "../hooks/useCarouselTween";
+import { useCarouselTween } from "@/hooks/useCarouselTween";
 
 import { IoChevronBackCircle, IoChevronForwardCircle } from "react-icons/io5";
 
-import studioGirlPainting from "../assets/images/studio-girl-painting.jpg";
-import studioPitcher from "../assets/images/studio-pitcher.jpg";
-import studioColorful from "../assets/images/studio-colorful.jpg";
-import studioMug from "../assets/images/studio-mug.jpg";
-import studioKidsPainting from "../assets/images/studio-kids-painting.jpg";
+import studioGirlPainting from "@/assets/images/studio-girl-painting.jpg";
+import studioPitcher from "@/assets/images/studio-pitcher.jpg";
+import studioColorful from "@/assets/images/studio-colorful.jpg";
+import studioMug from "@/assets/images/studio-mug.jpg";
+import studioKidsPainting from "@/assets/images/studio-kids-painting.jpg";
 
 function BlobCarousel() {
   const slides = [

@@ -1,5 +1,5 @@
-import logoVertStack from "../assets/images/logo-vert-stack.svg";
-import logoHoriStack from "../assets/images/logo-hori-stack.svg";
+import logoVertStack from "@/assets/images/logo-vert-stack.svg";
+import logoHoriStack from "@/assets/images/logo-hori-stack.svg";
 
 function Hero() {
   return (

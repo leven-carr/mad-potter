@@ -1,8 +1,8 @@
-import PageWrapper from "../components/PageWrapper";
-import Hero from "../components/Hero";
-import Welcome from "../components/Welcome";
-import HowItWorks from "../components/HowItWorks";
-import CTA from "../components/CTA";
+import PageWrapper from "../components/ui/PageWrapper";
+import Hero from "../components/features/home/Hero";
+import Welcome from "../components/features/home/Welcome";
+import HowItWorks from "../components/features/home/HowItWorks";
+import CTA from "../components/common/CTA";
 
 function Home() {
   return (

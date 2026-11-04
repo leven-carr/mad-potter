@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
 import Home from "./pages/Home";
 import PartiesKeepsakes from "./pages/PartiesKeepsakes";
 import Gallery from "./pages/Gallery";

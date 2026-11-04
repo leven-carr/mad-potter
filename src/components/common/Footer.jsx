@@ -1,12 +1,12 @@
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
-import { CONTACT_CONFIG, businessInfo } from "../constants/businessInfo";
-import { NAV_LINKS } from "../constants/navigation";
-import ShapeDivider from "./ShapeDivider";
-import HorizontalRule from "./HorizontalRule";
-import ConnectRow from "./ConnectRow";
+import { CONTACT_CONFIG, businessInfo } from "@/constants/businessInfo";
+import { NAV_LINKS } from "@/constants/navigation";
+import ShapeDivider from "@/components/ui/ShapeDivider";
+import HorizontalRule from "@/components/ui/HorizontalRule";
+import ContactRow from "./ContactRow";
 import HoursRow from "./HoursRow";
 import NavLinkItem from "./NavLinkItem";
-import logoSubmark from "../assets/images/logo-submark.svg";
+import logoSubmark from "@/assets/images/logo-submark.svg";
 
 function Footer() {
   const { hours } = businessInfo;
@@ -22,7 +22,7 @@ function Footer() {
             <div className="flex flex-col">
               {CONTACT_CONFIG.map((contactMethod) => {
                 return (
-                  <ConnectRow key={contactMethod.id} data={contactMethod} />
+                  <ContactRow key={contactMethod.id} data={contactMethod} />
                 );
               })}
             </div>

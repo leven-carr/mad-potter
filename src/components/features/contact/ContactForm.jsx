@@ -1,8 +1,8 @@
 import { useState } from "react";
-import FormInputField from "./FormInputField";
-import FormSelectField from "./FormSelectField";
-import FormMessageField from "./FormMessageField";
-import FormBtn from "./FormBtn";
+import FormInputField from "@/components/ui/FormInputField";
+import FormSelectField from "@/components/ui/FormSelectField";
+import FormTextField from "@/components/ui/FormTextField";
+import FormButton from "@/components/ui/FormButton";
 import FormSuccessModal from "./FormSuccessModal";
 
 function ContactForm() {
@@ -200,13 +200,13 @@ function ContactForm() {
           }}
         />
 
-        <FormMessageField
+        <FormTextField
           value={formState.message}
           onChange={handleChange}
           errorMsg={errors.message}
         />
 
-        <FormBtn type="submit">Send Message</FormBtn>
+        <FormButton type="submit">Send Message</FormButton>
       </form>
 
       <FormSuccessModal

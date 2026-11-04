@@ -1,7 +1,7 @@
 import { Field, Label, Textarea } from "@headlessui/react";
 import FormErrorMessage from "./FormErrorMessage";
 
-function FormMessageField({ value, onChange, errorMsg }) {
+function FormTextField({ value, onChange, errorMsg }) {
   return (
     <Field className="flex flex-col gap-1">
       <Label className="text-sm text-ink-base/80 uppercase" passive>
@@ -21,4 +21,4 @@ function FormMessageField({ value, onChange, errorMsg }) {
   );
 }
 
-export default FormMessageField;
+export default FormTextField;

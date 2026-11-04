@@ -1,6 +1,6 @@
 import NavLinkItem from "./NavLinkItem";
 
-function CTAButton() {
+function CTALink() {
   return (
     <NavLinkItem
       link={{ to: "/contact-us", label: "Plan Your Visit" }}
@@ -26,4 +26,4 @@ function CTAButton() {
   );
 }
 
-export default CTAButton;
+export default CTALink;
