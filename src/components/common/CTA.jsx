@@ -1,8 +1,8 @@
-import LayoutWrapper from "./LayoutWrapper";
-import SectionHeading from "./SectionHeading";
-import Subheading from "./Subheading";
-import CTAButton from "./CTAButton";
-import paintsImg from "../assets/images/paints.jpg";
+import LayoutWrapper from "@/components/ui/LayoutWrapper";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Subheading from "@/components/ui/Subheading";
+import CTALink from "./CTALink";
+import paintsImg from "@/assets/images/paints.jpg";
 
 function CTA() {
   return (
@@ -13,7 +13,7 @@ function CTA() {
           <Subheading>Ready to get creative?</Subheading>
           <SectionHeading>We'd love to paint with you!</SectionHeading>
           <div className="flex items-center justify-center py-4">
-            <CTAButton />
+            <CTALink />
           </div>
         </div>
 

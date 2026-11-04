@@ -1,9 +1,9 @@
-import LayoutWrapper from "./LayoutWrapper";
-import PageHeading from "./PageHeading";
+import LayoutWrapper from "@/components/ui/LayoutWrapper";
+import PageHeading from "@/components/ui/PageHeading";
 import ContactForm from "./ContactForm";
-import ConnectTab from "./ConnectTab";
+import ContactTab from "./ContactTab";
 import HoursTab from "./HoursTab";
-import { CONTACT_CONFIG } from "../constants/businessInfo";
+import { CONTACT_CONFIG } from "@/constants/businessInfo";
 
 function VisitUs() {
   return (
@@ -24,7 +24,7 @@ function VisitUs() {
         {/* Connect and Hours */}
         <div className="flex max-w-xl flex-col gap-8 py-6">
           {CONTACT_CONFIG.map((contactMethod) => {
-            return <ConnectTab key={contactMethod.id} data={contactMethod} />;
+            return <ContactTab key={contactMethod.id} data={contactMethod} />;
           })}
           <HoursTab />
         </div>

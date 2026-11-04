@@ -1,6 +1,6 @@
 import { Button } from "@headlessui/react";
 
-function FormBtn({ type = "button", children }) {
+function FormButton({ type = "button", children }) {
   return (
     <Button
       type={type}
@@ -11,4 +11,4 @@ function FormBtn({ type = "button", children }) {
   );
 }
 
-export default FormBtn;
+export default FormButton;

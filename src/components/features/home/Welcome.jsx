@@ -1,8 +1,8 @@
-import LayoutWrapper from "./LayoutWrapper";
-import PageHeading from "./PageHeading";
-import Subheading from "./Subheading";
-import HorizontalRule from "./HorizontalRule";
-import welcomeImg from "../assets/images/welcome.jpg";
+import LayoutWrapper from "@/components/ui/LayoutWrapper";
+import PageHeading from "@/components/ui/PageHeading";
+import Subheading from "@/components/ui/Subheading";
+import HorizontalRule from "@/components/ui/HorizontalRule";
+import welcomeImg from "@/assets/images/welcome.jpg";
 
 function Welcome() {
   return (

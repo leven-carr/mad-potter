@@ -1,4 +1,4 @@
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 
 function SectionHeading({ className, children }) {
   return (

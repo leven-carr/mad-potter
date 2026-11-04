@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 import { FiExternalLink } from "react-icons/fi";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 
 function NavLinkItem({ link, className, children, ...props }) {
   if (link.isExternal) {

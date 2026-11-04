@@ -6,8 +6,8 @@ import {
   DisclosurePanel,
 } from "@headlessui/react";
 import { IoChevronDownCircle } from "react-icons/io5";
-import NavLinkItem from "./NavLinkItem";
-import { ICON_MAP } from "../constants/iconMap";
+import NavLinkItem from "@/components/common/NavLinkItem";
+import { ICON_MAP } from "@/constants/iconMap";
 
 const BACKGROUND_MAP = {
   "walk-ins": "bg-walk-ins",

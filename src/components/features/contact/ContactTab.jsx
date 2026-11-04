@@ -1,5 +1,5 @@
-import { ICON_MAP } from "../constants/iconMap";
-import ContactTabLayout from "./ContactTabLayout";
+import { ICON_MAP } from "@/constants/iconMap";
+import InfoTabLayout from "./InfoTabLayout";
 
 function ConnectTab({ data }) {
   const { id, title, value, srValue, link, iconName } = data;
@@ -8,7 +8,7 @@ function ConnectTab({ data }) {
 
   return (
     <address className="contents not-italic">
-      <ContactTabLayout
+      <InfoTabLayout
         as="a"
         href={link}
         target={opensNewTab ? "_blank" : undefined}
@@ -28,7 +28,7 @@ function ConnectTab({ data }) {
             {srValue && <span className="sr-only">{srValue}</span>}
           </>
         )}
-      </ContactTabLayout>
+      </InfoTabLayout>
     </address>
   );
 }

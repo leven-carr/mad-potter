@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { IoChevronBackCircle } from "react-icons/io5";
-import { NAV_LINKS } from "../constants/navigation";
+import { NAV_LINKS } from "@/constants/navigation";
 import NavLinkItem from "./NavLinkItem";
 import MobileMenu from "./MobileMenu";
-import logoLight from "../assets/images/logo-light.svg";
+import logoLight from "@/assets/images/logo-light.svg";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

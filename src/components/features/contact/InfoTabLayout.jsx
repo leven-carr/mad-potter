@@ -1,4 +1,4 @@
-function ContactTabLayout({
+function InfoTabLayout({
   as: Component = "div",
   icon: Icon,
   title,
@@ -27,4 +27,4 @@ function ContactTabLayout({
   );
 }
 
-export default ContactTabLayout;
+export default InfoTabLayout;

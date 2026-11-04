@@ -1,9 +1,9 @@
-import LayoutWrapper from "./LayoutWrapper";
-import SectionHeading from "./SectionHeading";
-import Subheading from "./Subheading";
+import LayoutWrapper from "@/components/ui/LayoutWrapper";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Subheading from "@/components/ui/Subheading";
 import FAQCard from "./FAQCard";
-import { FAQ_DATA } from "../constants/faqs";
-import HorizontalRule from "./HorizontalRule";
+import { FAQ_DATA } from "@/constants/faqs";
+import HorizontalRule from "@/components/ui/HorizontalRule";
 
 function HowItWorks() {
   return (

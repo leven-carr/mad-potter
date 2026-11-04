@@ -1,6 +1,6 @@
-import { ICON_MAP } from "../constants/iconMap";
+import { ICON_MAP } from "@/constants/iconMap";
 
-function ConnectRow({ data }) {
+function ContactRow({ data }) {
   const { id, value, srValue, link, iconName } = data;
   const Icon = ICON_MAP[iconName];
   const opensNewTab = id === "address";
@@ -33,4 +33,4 @@ function ConnectRow({ data }) {
   );
 }
 
-export default ConnectRow;
+export default ContactRow;
