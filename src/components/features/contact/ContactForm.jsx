@@ -25,17 +25,11 @@ function ContactForm() {
     message: "",
   });
 
+  // Submitting state - used to disable button during network request
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   // Modal state - tracks whether success modal is open
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Encode form data into Netlify-readable URL format
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]),
-      )
-      .join("&");
-  };
 
   // Update form state and error state as soon as the user changes a given input
   const handleChange = (e) => {
@@ -96,33 +90,34 @@ function ContactForm() {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateForm()) return;
 
     if (formState["bot-field"]) return;
 
-    // --- LOCAL TEST MOCK ---
-    // console.log("Mocking successful submission locally!");
-    // setIsModalOpen(true);
-    // setFormState({
-    //   name: "",
-    //   email: "",
-    //   phone: "",
-    //   subject: "",
-    //   message: "",
-    //   "bot-field": "",
-    // });
-    // return;
+    setIsSubmitting(true);
 
-    // Submit to Netlify
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formState }),
-    })
-      .then(() => {
+    // Prepare JSON payload with your Web3Forms access key
+    const payload = {
+      access_key: "1ac92e3d-77c6-480e-b6fd-97a56fe230a1",
+      ...formState,
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
         setIsModalOpen(true);
         setFormState({
           name: "",
@@ -132,8 +127,14 @@ function ContactForm() {
           message: "",
           "bot-field": "",
         });
-      })
-      .catch((error) => alert("Form submission failed: " + error));
+      } else {
+        alert("Form submission failed: " + (result.message || "Unknown error"));
+      }
+    } catch (error) {
+      alert("Form submission failed: " + error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -141,15 +142,10 @@ function ContactForm() {
       <form
         name="contact"
         method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
         noValidate
         className="flex w-full max-w-xl flex-col gap-4 rounded-2xl border-2 border-ink-base/15 bg-canvas-light p-6 shadow-lg"
       >
-        {/* Netlify ID field */}
-        <input type="hidden" name="form-name" value="contact" />
-
         {/* Honeypot spam field */}
         <p style={{ display: "none" }}>
           <label>
@@ -206,7 +202,9 @@ function ContactForm() {
           errorMsg={errors.message}
         />
 
-        <FormButton type="submit">Send Message</FormButton>
+        <FormButton type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Sending..." : "Send Message"}
+        </FormButton>
       </form>
 
       <FormSuccessModal
