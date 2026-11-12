@@ -26,6 +26,11 @@
   /* Breakpoints */
   --breakpoint-xs: 360px;
 
+  /* Z Index */
+  --z-index-fixed: 20;
+  --z-index-backdrop: 30;
+  --z-index-modal: 40;
+
   /* Fonts */
   --font-sans: "Figtree Variable", sans-serif;
   --font-display: "Capriola Variable", sans-serif;
