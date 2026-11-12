@@ -14,7 +14,7 @@ function MobileMenu({ isOpen, onClose, links }) {
         className="fixed inset-0 bg-ink-deep/30 backdrop-blur-xs transition-opacity duration-450 data-closed:opacity-0"
       />
 
-      <div className="fixed inset-0">
+      <div className="fixed inset-0 z-modal">
         <DialogPanel
           as="nav"
           aria-label="Mobile menu"

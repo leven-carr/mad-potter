@@ -12,9 +12,9 @@ function FormSuccessModal({ isOpen, onClose }) {
     <Dialog open={isOpen} onClose={onClose}>
       <DialogBackdrop
         transition
-        className="fixed inset-0 bg-ink-deep/30 backdrop-blur-xs"
+        className="fixed inset-0 z-backdrop bg-ink-deep/30 backdrop-blur-xs"
       />
-      <div className="fixed inset-0 flex items-center justify-center p-6">
+      <div className="fixed inset-0 z-modal flex items-center justify-center p-6">
         <DialogPanel className="flex w-full max-w-md flex-col overflow-hidden rounded-xl">
           <div className="flex items-center justify-center bg-brand-primary p-6 text-brand-secondary">
             <AnimatedBunnyMail className="size-32" />

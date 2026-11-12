@@ -25,7 +25,7 @@ function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-brand-primary text-brand-secondary">
+    <header className="sticky top-0 z-fixed w-full bg-brand-primary text-brand-secondary">
       <div
         className={`mx-auto flex max-w-7xl items-center justify-between p-4 transition-all duration-300 ease-in-out md:gap-10 lg:gap-16 lg:px-8 ${isShrunk ? "py-2 md:py-2 md:hover:py-4" : "py-2 md:py-4"} `}
       >
