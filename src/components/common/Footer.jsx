@@ -97,7 +97,7 @@ function Footer() {
             className="footer-logo max-w-64 md:max-w-80"
           />
 
-          <p className="footer-notice">
+          <p className="footer-notice max-w-2xl pt-4 pb-20 lg:pb-4">
             <strong>Disclaimer:</strong> This website is an unofficial frontend
             development concept redesign created for portfolio use. It is not
             affiliated with nor endorsed by Mad Potter.
