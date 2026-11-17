@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { CustomLuCouponBadge } from "@/components/icons";
+import { LuBadge } from "react-icons/lu";
+import { CustomLuCoupon } from "@/components/icons";
 
-function CouponButton() {
+function CouponButton({ onClick }) {
   const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
@@ -26,15 +27,22 @@ function CouponButton() {
         onMouseLeave={resetDismiss}
         onFocus={resetDismiss}
         onBlur={resetDismiss}
-        className="peer aspect-square w-[clamp(4rem,15vw,6rem)] cursor-pointer rounded-full transition-[scale,rotate] duration-300 hover:scale-108 hover:rotate-8 focus-visible:ring-3 focus-visible:ring-brand-primary/70 focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-brand-secondary"
+        onClick={onClick}
+        className="peer grid aspect-square w-[clamp(4rem,15vw,7rem)] cursor-pointer place-items-center rounded-full drop-shadow-lg transition-[scale,rotate] duration-300 hover:scale-108 hover:rotate-8 focus-visible:ring-3 focus-visible:ring-brand-primary/70 focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-brand-secondary"
       >
-        <CustomLuCouponBadge aria-hidden="true" className="drop-shadow-lg" />
+        <LuBadge
+          aria-hidden="true"
+          className="col-start-1 row-start-1 size-full fill-brand-accent stroke-0"
+        />
+        <CustomLuCoupon
+          aria-hidden="true"
+          className="col-start-1 row-start-1 size-[52%] translate-y-[1.5px] text-canvas"
+        />
       </button>
 
       <span
-        role="tooltip"
         aria-hidden="true"
-        className={`pointer-events-none absolute bottom-full left-1/2 mb-4 w-max -translate-x-1/2 translate-y-3 scale-70 rounded-md bg-[#57425b] p-2 text-sm text-canvas opacity-0 drop-shadow-vector-dark transition-[opacity,scale,translate] delay-0 duration-250 after:absolute after:-bottom-1 after:left-1/2 after:size-2.5 after:-translate-x-1/2 after:rotate-45 after:bg-[#57425b] ${
+        className={`pointer-events-none absolute bottom-full left-1/2 mb-4 w-max -translate-x-1/2 translate-y-3 scale-70 rounded-md bg-[#57425b] p-2 text-sm text-canvas opacity-0 drop-shadow-lg transition-[opacity,scale,translate] delay-0 duration-250 after:absolute after:-bottom-1 after:left-1/2 after:size-2.5 after:-translate-x-1/2 after:rotate-45 after:bg-[#57425b] ${
           !isDismissed
             ? "peer-hover:translate-y-0 peer-hover:scale-100 peer-hover:opacity-100 peer-hover:delay-500 peer-focus-visible:translate-y-0 peer-focus-visible:scale-100 peer-focus-visible:opacity-100 peer-focus-visible:delay-0"
             : ""

@@ -1,7 +1,7 @@
 import PageWrapper from "../components/ui/PageWrapper";
 import VisitUs from "../components/features/contact/VisitUs";
 import BlobCarousel from "../components/features/contact/BlobCarousel";
-import CouponButton from "../components/common/CouponButton";
+import CouponModal from "../components/common/CouponModal";
 
 function Contact() {
   return (
@@ -11,7 +11,7 @@ function Contact() {
       <div className="lg:py-6">
         <BlobCarousel />
       </div>
-      <CouponButton />
+      <CouponModal />
     </PageWrapper>
   );
 }
