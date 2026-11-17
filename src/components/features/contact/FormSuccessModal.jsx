@@ -12,7 +12,7 @@ function FormSuccessModal({ isOpen, onClose }) {
     <Dialog open={isOpen} onClose={onClose}>
       <DialogBackdrop
         transition
-        className="fixed inset-0 z-backdrop bg-ink-deep/30 backdrop-blur-xs"
+        className="fixed inset-0 z-backdrop bg-ink-deep/60 backdrop-blur-xs"
       />
       <div className="fixed inset-0 z-modal flex items-center justify-center p-6">
         <DialogPanel className="flex w-full max-w-md flex-col overflow-hidden rounded-xl">
@@ -20,7 +20,7 @@ function FormSuccessModal({ isOpen, onClose }) {
             <AnimatedBunnyMail className="size-32" />
           </div>
           <div className="flex flex-col items-center gap-5 bg-canvas p-10">
-            <DialogTitle className="lg:4xl font-display text-3xl">
+            <DialogTitle className="font-display text-3xl lg:text-4xl">
               Thank you!
             </DialogTitle>
             <p className="text-center text-lg">
