@@ -25,6 +25,13 @@ function ContactForm() {
     message: "",
   });
 
+  // Dropdown options
+  const subjects = [
+    { id: 1, name: "Parties & Keepsakes" },
+    { id: 2, name: "Custom Orders" },
+    { id: 3, name: "Something else..." },
+  ];
+
   // Submitting state - used to disable button during network request
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -163,8 +170,8 @@ function ContactForm() {
           name="name"
           placeholder="Your name"
           value={formState.name}
-          onChange={handleChange}
           errorMsg={errors.name}
+          onChange={handleChange}
         />
 
         <FormInputField
@@ -173,8 +180,8 @@ function ContactForm() {
           type="tel"
           placeholder="Your phone number"
           value={formState.phone}
-          onChange={handleChange}
           errorMsg={errors.phone}
+          onChange={handleChange}
         />
 
         <FormInputField
@@ -183,11 +190,14 @@ function ContactForm() {
           type="email"
           placeholder="Your email address"
           value={formState.email}
-          onChange={handleChange}
           errorMsg={errors.email}
+          onChange={handleChange}
         />
 
         <FormSelectField
+          label="How can we help you?"
+          placeholder="Please select a subject"
+          options={subjects}
           value={formState.subject}
           errorMsg={errors.subject}
           onChange={(val) => {
@@ -197,9 +207,13 @@ function ContactForm() {
         />
 
         <FormTextField
+          label="Message"
+          name="message"
+          placeholder="I'm interested in booking a party..."
+          rows="5"
           value={formState.message}
-          onChange={handleChange}
           errorMsg={errors.message}
+          onChange={handleChange}
         />
 
         <FormButton type="submit" disabled={isSubmitting}>
