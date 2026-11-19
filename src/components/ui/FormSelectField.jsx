@@ -8,6 +8,7 @@ import {
 } from "@headlessui/react";
 import { IoChevronDown } from "react-icons/io5";
 import FormErrorMessage from "./FormErrorMessage";
+import { cn } from "@/utils/cn";
 
 function FormSelectField({
   label = "",
@@ -22,9 +23,25 @@ function FormSelectField({
       <Label className="text-ink-base/80" passive>
         {label} <span className="text-xs uppercase italic">(Required)</span>
       </Label>
+
       <Listbox value={value} onChange={onChange}>
         <ListboxButton
-          className={`flex w-full items-center justify-between rounded-lg border-2 bg-canvas p-2 text-left focus:border-brand-primary/70 focus:outline-none data-open:rounded-b-none data-open:border-brand-primary/70 data-open:border-b-transparent ${errorMsg ? "border-brand-accent/70" : "border-ink-base/15 hover:border-brand-primary/30"}`}
+          className={cn(
+            // Base layout & appearance
+            "flex w-full items-center justify-between rounded-lg border-2 bg-canvas p-2 text-left focus:outline-none",
+            // Focus & open border color
+            "focus:border-brand-primary/70 data-open:border-brand-primary/70",
+            // Error vs. default border
+            errorMsg
+              ? "border-brand-accent/70"
+              : "border-ink-base/15 hover:border-brand-primary/30",
+            // Anchored bottom (menu below button)
+            "data-open:[body:has([data-anchor~=bottom])_&]:rounded-b-none",
+            "data-open:[body:has([data-anchor~=bottom])_&]:border-b-transparent",
+            // Anchored top (menu above button)
+            "data-open:[body:has([data-anchor~=top])_&]:rounded-t-none",
+            "data-open:[body:has([data-anchor~=top])_&]:border-t-transparent",
+          )}
         >
           {value ? (
             <span>{value}</span>
@@ -38,7 +55,22 @@ function FormSelectField({
         <ListboxOptions
           modal={false}
           anchor="bottom start"
-          className="relative w-(--button-width) overflow-hidden rounded-lg rounded-t-none border-2 border-ink-base/15 bg-canvas text-left text-ink-base/80 [--anchor-gap:-2px] before:absolute before:inset-x-3 before:top-0 before:h-[1.5px] before:bg-ink-base/15 focus:outline-none data-open:border-t-0 data-open:border-brand-primary/70 data-open:shadow-lg"
+          className={cn(
+            // Base layout & appearance
+            "relative w-(--button-width) overflow-hidden rounded-lg border-2 border-ink-base/15 bg-canvas text-left text-ink-base/80 focus:outline-none",
+            "[--anchor-gap:-2px] data-open:border-brand-primary/70",
+            // Divider line pseudo-element
+            "before:absolute before:inset-x-3 before:h-[1.5px] before:bg-ink-base/15",
+            // Anchored bottom (menu below button)
+            "data-[anchor~=bottom]:rounded-t-none",
+            "data-[anchor~=bottom]:before:top-0",
+            "data-[anchor~=bottom]:data-open:border-t-0",
+            "data-[anchor~=bottom]:data-open:drop-shadow-lg",
+            // Anchored top (menu above button)
+            "data-[anchor~=top]:rounded-b-none",
+            "data-[anchor~=top]:before:bottom-0",
+            "data-[anchor~=top]:data-open:border-b-0",
+          )}
         >
           {options.map((option) => (
             <ListboxOption
